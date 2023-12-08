@@ -6,12 +6,18 @@ header {
     li {
         margin: 20px;
     }
-    position: absolute;
+
+    @media (min-width: 1400px) {
+        position: absolute;
+        background-color: transparent !important;
+    }
+    
+    background-color: $black;
 
     .bg-red {
         background-color: $red;
         padding: 0px 5px;
-        width: 170px;
+        width: 180px;
     }
 }
 

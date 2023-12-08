@@ -7,3 +7,8 @@ $black: #24201f;
 @mixin Button() {
     padding: 20px;
 }
+
+.nav-background {
+    height: 180px;
+    background-color: $black;
+}
