@@ -1,0 +1,9 @@
+// Variables
+$white: #fff;
+$red: #e41b28;
+$black: #24201f;
+
+// Mixins
+@mixin Button() {
+    padding: 20px;
+}
