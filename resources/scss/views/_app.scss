@@ -1,0 +1,36 @@
+header {
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+    li {
+        margin: 20px;
+    }
+    position: absolute;
+
+    .bg-red {
+        background-color: $red;
+        padding: 0px 5px;
+        width: 170px;
+    }
+}
+
+footer {
+    a {
+        color: $white;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $white;
+    }
+
+    p {
+        color: $white;
+    }
+    background-color: $black;
+}
