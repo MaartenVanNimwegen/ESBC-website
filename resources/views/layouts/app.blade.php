@@ -19,12 +19,12 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     @vite(['resources/scss/app.scss', 'resources/css/app.css', 'resources/js/app.js'])
-    <link rel="shortcut icon" href="{{ asset('storage/images/logo.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('storage/images/logo.png') }}" type="image/x-icon">
     <title>ESBC Menhir</title>
 </head>
 
 <body>
-    <header>
+    <header class="w-100">
         <nav class="navbar navbar-expand-xxl navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
@@ -35,7 +35,7 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo02">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a href="/">
@@ -63,19 +63,19 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="d-flex">
+                    <div class="d-flex me-5">
                         <h4 class="ms-4">
-                            <a href="https://www.facebook.com/esbcmenhir/">
+                            <a target="_blank" href="https://www.facebook.com/esbcmenhir/">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         </h4>
                         <h4 class="ms-4">
-                            <a href="https://www.instagram.com/esbcmenhir/">
+                            <a target="_blank" href="https://www.instagram.com/esbcmenhir/">
                                 <i class="fa fa-instagram"></i>
                             </a>
                         </h4>
                         <h4 class="ms-4">
-                            <a href="https://www.x.com/esbcmenhir/">
+                            <a target="_blank" href="https://www.x.com/esbcmenhir/">
                                 <i class="fa fa-twitter"></i>
                             </a>
                         </h4>
@@ -134,12 +134,14 @@
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 pb-4">
                     <h6 class="text-uppercase fw-bold mb-4"><a href="/privacy-policy">Privacypolicy</a></h6>
+                    <p><a href="/login">Login</a></p>
                 </div>
             </div>
         </div>
         <div class="text-center p-4">
             <p>
-                Copyright © 2023 ESBC Menhir - Made by <a href="https://www.linkedin.com/in/maartenvannimwegen/" target="_blank">Maarten van Nimwegen</a>
+                Copyright © 2023 ESBC Menhir - Made by <a href="https://www.linkedin.com/in/maartenvannimwegen/"
+                    target="_blank">Maarten van Nimwegen</a>
             </p>
         </div>
     </footer>

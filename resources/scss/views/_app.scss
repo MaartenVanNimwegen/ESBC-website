@@ -16,12 +16,13 @@ header {
 
     .bg-red {
         background-color: $red;
-        padding: 0px 5px;
+        padding: 0px 0px 0px 5px;
         width: 180px;
     }
 }
 
 footer {
+    margin-top: 50px;
     a {
         color: $white;
     }
