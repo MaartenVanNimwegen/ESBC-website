@@ -17,7 +17,7 @@ Route::get('/lid-worden', function () {
     return view('lid-worden');
 });
 Route::get('/privacy-policy', function () {
-    return view('privacyPolicy');
+    return view('privacy-policy');
 });
 Route::get('/inschrijfformulier', function () {
     return view('inschrijfformulier');
