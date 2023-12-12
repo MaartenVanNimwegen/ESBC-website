@@ -1,24 +1,20 @@
 body {
-    /* Assuming your slider has a class like 'slick-slider' */
     .slick-slider .slick-prev,
     .slick-slider .slick-next {
-        background-color: $white; /* Set background color to white */
-        color: $black; /* Set text color to black or any other desired color */
+        background-color: $white;
+        color: $black;
     }
 
-    /* Styling the icons */
     .slick-slider .slick-prev:before,
     .slick-slider .slick-next:before {
-        color: $black; /* Set icon color to black or any other desired color */
+        color: $black;
     }
 
-    /* Hover styles for buttons */
     .slick-slider .slick-prev:hover,
     .slick-slider .slick-next:hover {
         opacity: .5;
     }
 
-    /* If you want to remove the transparent effect on the icons, you can set opacity to 1 */
     .slick-slider .slick-prev:before,
     .slick-slider .slick-next:before {
         opacity: 1;
