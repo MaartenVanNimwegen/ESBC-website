@@ -9,9 +9,15 @@ header {
 
     @media (min-width: 1400px) {
         position: absolute;
-        background-color: transparent !important;
+        background: linear-gradient(
+            180deg,
+            rgba(36, 30, 32, 0.5) 0%,
+            rgba(36, 30, 32, 0.5) 24.48%,
+            rgba(36, 30, 32, 0.331034) 53.12%,
+            rgba(36, 30, 32, 0) 100%
+        );
     }
-    
+
     background-color: $black;
 
     .bg-red {
