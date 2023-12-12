@@ -1,11 +1,16 @@
+// Import bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/slick-slider/slick/slick";
+@import "node_modules/slick-slider/slick/slick-theme";
+
 // Import variables
-@import 'abstracts/custom';
+@import "abstracts/custom";
 
 // Import views
-@import 'views/home';
-@import 'views/app';
-@import 'views/games';
-@import 'views/news';
-@import 'views/lid-worden';
-@import 'views/inschrijfformulier';
-@import 'views/login';
+@import "views/home";
+@import "views/app";
+@import "views/games";
+@import "views/news";
+@import "views/lid-worden";
+@import "views/inschrijfformulier";
+@import "views/login";
