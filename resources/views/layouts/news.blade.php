@@ -3,7 +3,7 @@
     <div class="col-12 p-5">
         <div class="slick-slider">
             @foreach ($news as $newsItem)
-                <div class="news m-2">
+                <div class="news m-5">
                     <div class="row g-0 p-3">
                         <div class="col-12">
                             <h1>{{ $newsItem->title }}</h1>
