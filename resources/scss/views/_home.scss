@@ -1,4 +1,21 @@
 body {
+    .sponsor-slider {
+        .img-parent {
+            height: 250px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+    }
     .slick-slider .slick-prev,
     .slick-slider .slick-next {
         background-color: $white;
@@ -12,7 +29,7 @@ body {
 
     .slick-slider .slick-prev:hover,
     .slick-slider .slick-next:hover {
-        opacity: .5;
+        opacity: 0.5;
     }
 
     .slick-slider .slick-prev:before,

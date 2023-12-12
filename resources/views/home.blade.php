@@ -14,13 +14,14 @@
                     <h1 class="video-text text-uppercase fw-bold"><b>ESBC MENHIR <br>SNEEK</b></h1>
                     @include('layouts.news')
                     @include('layouts.games')
+                    @include('layouts.sponsors')
                 </div>
             </div>
         </div>
     @endsection
     <script>
         $(document).ready(function() {
-            $('.slick-slider').slick({
+            $('.news-slider').slick({
                 dots: true,
                 slidesToShow: 3,
                 slidesToScroll: 3,
@@ -38,6 +39,28 @@
                             slidesToShow: 1,
                             slidesToScroll: 1,
                             dots: true,
+                        }
+                    }
+                ]
+            });
+            $('.sponsor-slider').slick({
+                slidesToShow: 3,
+                dots: true,
+                slidesToScroll: 3,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                responsive: [{
+                        breakpoint: 1500,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 1000,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
                         }
                     }
                 ]
