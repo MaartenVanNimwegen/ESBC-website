@@ -110,9 +110,14 @@
 
                             <br>
                             <p class="fw-bold">Algemeen</p>
-                            <p>Ik ben op de hoogte van de voorwaarden die aan mijn lidmaatschap gesteld worden zoals omschreven in het Huishoudelijk Reglement, zie hiervoor het Huishoudelijk Reglement.</p>
-                            <p>Door het versturen van dit formulier machtig je/machtigt u basketbal vereniging ESBC Menhir tot het incasseren van de contributie via automatische incasso van het aangegeven IBAN rekeningnummer in vier termijnen.Voor vragen kan je / kunt u terecht bij de penningmeester, gegevens van de penningmeester staan op de website.</p>
-                            <p>Indien je van een andere vereniging komt, altijd een schuldvrijverklaring van de vorige vereniging aanleveren!</p>
+                            <p>Ik ben op de hoogte van de voorwaarden die aan mijn lidmaatschap gesteld worden zoals
+                                omschreven in het Huishoudelijk Reglement, zie hiervoor het Huishoudelijk Reglement.</p>
+                            <p>Door het versturen van dit formulier machtig je/machtigt u basketbal vereniging ESBC Menhir
+                                tot het incasseren van de contributie via automatische incasso van het aangegeven IBAN
+                                rekeningnummer in vier termijnen.Voor vragen kan je / kunt u terecht bij de penningmeester,
+                                gegevens van de penningmeester staan op de website.</p>
+                            <p>Indien je van een andere vereniging komt, altijd een schuldvrijverklaring van de vorige
+                                vereniging aanleveren!</p>
                             <button class="btn btn-red" type="submit">Verzenden</button>
                         </form>
 

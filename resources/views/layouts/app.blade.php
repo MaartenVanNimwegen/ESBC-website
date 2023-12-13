@@ -30,6 +30,76 @@
                 <a class="navbar-brand" href="/">
                     <img src="{{ asset('storage/images/logo.png') }}" alt="Logo" height="120" class="px-5">
                 </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end background-black" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header text-right">
+                        <div class="container text-end">
+                            <div class="row">
+                                <div class="col-12 mt-4">
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a href="/">
+                                    <h4 class="text-uppercase fw-bold">HOME</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/teams">
+                                    <h4 class="text-uppercase fw-bold">TEAMS</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/nieuws">
+                                    <h4 class="text-uppercase fw-bold">NIEUWS</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/wedstrijden">
+                                    <h4 class="text-uppercase fw-bold">WEDSTRIJDEN</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item bg-red">
+                                <a href="/lid-worden">
+                                    <h4 class="text-uppercase fw-bold">LID WORDEN?</h4>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="d-flex me-5">
+                            <h4 class="m-4">
+                                <a target="_blank" href="https://www.facebook.com/esbcmenhir/">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </h4>
+                            <h4 class="m-4">
+                                <a target="_blank" href="https://www.instagram.com/esbcmenhir/">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </h4>
+                            <h4 class="m-4">
+                                <a target="_blank" href="https://www.x.com/esbcmenhir/">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {{-- <nav class="navbar navbar-expand-xxl navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="{{ asset('storage/images/logo.png') }}" alt="Logo" height="120" class="px-5">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -82,7 +152,7 @@
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
     </header>
 
 
