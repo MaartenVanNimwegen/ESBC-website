@@ -1,36 +1,29 @@
-<!doctype html>
-<html lang="nl">
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-<body>
-    @extends('layouts.app')
-    @section('content')
-        <div id="home">
-            <div class="row g-0">
-                <div class="col-12">
-                    <video style="width:100%;" muted autoplay loop>
-                        <source src="{{ asset('storage/videos/home.mp4') }}" type="video/mp4" />
-                    </video>
-                    <h1 class="video-text text-uppercase fw-bold"><b>ESBC MENHIR <br>SNEEK</b></h1>
-                    @include('layouts.news')
-                    @include('layouts.games')
-                    @include('layouts.sponsors')
-                </div>
+@extends('layouts.app')
+@section('content')
+    <div id="home">
+        <div class="row g-0">
+            <div class="col-12">
+                <video style="width:100%;" muted autoplay loop>
+                    <source src="{{ asset('storage/videos/home.mp4') }}" type="video/mp4" />
+                </video>
+                <h1 class="video-text text-uppercase fw-bold"><b>ESBC MENHIR <br>SNEEK</b></h1>
+                @include('layouts.news')
+                @include('layouts.games')
+                @include('layouts.sponsors')
             </div>
         </div>
-    @endsection
+    </div>
     <script>
         $(document).ready(function() {
             $('.news-slider').slick({
-                dots: true,
                 slidesToShow: 3,
+                arrows: false,
                 slidesToScroll: 3,
                 responsive: [{
                         breakpoint: 1500,
                         settings: {
                             slidesToShow: 2,
                             slidesToScroll: 2,
-                            dots: true,
                         }
                     },
                     {
@@ -38,35 +31,42 @@
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1,
-                            dots: true,
                         }
                     }
                 ]
             });
             $('.sponsor-slider').slick({
-                slidesToShow: 3,
-                dots: true,
-                slidesToScroll: 3,
+                slidesToShow: 5,
+                arrows: false,
+                slidesToScroll: 1,
                 autoplay: true,
-                autoplaySpeed: 2000,
+                autoplaySpeed: 1500,
                 responsive: [{
                         breakpoint: 1500,
                         settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2,
+                            slidesToShow: 4,
                         }
                     },
                     {
-                        breakpoint: 1000,
+                        breakpoint: 1300,
+                        settings: {
+                            slidesToShow: 3,
+                        }
+                    },
+                    {
+                        breakpoint: 900,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
                         settings: {
                             slidesToShow: 1,
-                            slidesToScroll: 1,
                         }
                     }
                 ]
             });
         });
     </script>
-</body>
-
-</html>
+@endsection

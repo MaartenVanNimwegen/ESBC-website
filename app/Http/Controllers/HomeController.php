@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $news = News::orderBy('created_at', 'desc')->get();
+        $news = News::orderBy('created_at', 'desc')->take(3)->get();
         $sponsors = Sponsor::get();
         return view('home', ['news' => $news, 'sponsors' => $sponsors]);
     }

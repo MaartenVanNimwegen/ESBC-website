@@ -14,27 +14,9 @@ body {
             height: 100%;
             object-fit: contain;
         }
-        
-    }
-    .slick-slider .slick-prev,
-    .slick-slider .slick-next {
-        background-color: $white;
-        color: $black;
-    }
-
-    .slick-slider .slick-prev:before,
-    .slick-slider .slick-next:before {
-        color: $black;
-    }
-
-    .slick-slider .slick-prev:hover,
-    .slick-slider .slick-next:hover {
-        opacity: 0.5;
-    }
-
-    .slick-slider .slick-prev:before,
-    .slick-slider .slick-next:before {
-        opacity: 1;
+        .slick-slider {
+            background-color: transparent;
+        }
     }
 
     .video-text {
