@@ -1,6 +1,7 @@
-<div class="row g-0 m-5">
+<div class="row g-0">
     <div class="col-md-6">
-        <div class="m-5 game">
+        <h1 class="text-uppercase fw-bold text-center">Recentste wedstrijd</h1>
+        <div class="game mx-4 mb-5 mt-2">
             <h1>x12</h1>
             <div class="row g-0 pb-3">
                 <div class="col-5">
@@ -22,7 +23,8 @@
 
 
     <div class="col-md-6">
-        <div class="m-5 game">
+        <h1 class="text-uppercase fw-bold text-center">Opkomende wedstrijd</h1>
+        <div class="game mx-4 mb-5 mt-2">
             <h1>MSE</h1>
             <div class="row g-0 pb-3">
                 <div class="col-5">

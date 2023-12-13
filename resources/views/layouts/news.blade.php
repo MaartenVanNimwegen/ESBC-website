@@ -1,9 +1,9 @@
 <h1 class="text-uppercase fw-bold text-center">LAATSTE NIEUWS</h1>
 <div class="row g-0">
-    <div class="col-12 px-5 pb-5">
+    <div class="col-12">
         <div class="news-slider">
             @foreach ($news as $newsItem)
-                <div class="news m-5">
+                <div class="news mx-4 mb-5 mt-2">
                     <div class="row g-0 p-3">
                         <div class="col-12">
                             <h1>{{ $newsItem->title }}</h1>

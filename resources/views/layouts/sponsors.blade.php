@@ -1,9 +1,9 @@
 <h1 class="text-uppercase fw-bold text-center">Sponsors</h1>
 <div class="row g-0">
-    <div class="col-12 px-5 pb-5">
+    <div class="col-12">
         <div class="sponsor-slider">
             @foreach ($sponsors as $sponsorItem)
-                <div class="sponsor m-5">
+                <div class="sponsor mx-4 mb-5 mt-2">
                     <div class="row g-0 p-3">
                         <div class="col-12">
                             <div class="img-parent">

@@ -7,9 +7,12 @@
                     <source src="{{ asset('storage/videos/home.mp4') }}" type="video/mp4" />
                 </video>
                 <h1 class="video-text text-uppercase fw-bold"><b>ESBC MENHIR <br>SNEEK</b></h1>
-                @include('layouts.news')
-                @include('layouts.games')
-                @include('layouts.sponsors')
+                <div class="container-fluid">
+
+                    @include('layouts.news')
+                    @include('layouts.games')
+                    @include('layouts.sponsors')
+                </div>
             </div>
         </div>
     </div>
