@@ -1,7 +1,3 @@
-<!doctype html>
-<html lang="nl">
-
-<body>
     @extends('layouts.app')
     @section('content')
         <div id="lid-worden">
@@ -126,6 +122,3 @@
             </div>
         </div>
     @endsection
-</body>
-
-</html>

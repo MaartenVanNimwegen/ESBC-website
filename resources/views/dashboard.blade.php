@@ -1,7 +1,3 @@
-<!doctype html>
-<html lang="nl">
-
-<body>
     @extends('layouts.adminApp')
     @section('content')
         <div id="dashboard">
@@ -11,6 +7,3 @@
         </div>
         </div>
     @endsection
-</body>
-
-</html>
