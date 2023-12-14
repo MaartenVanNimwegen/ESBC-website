@@ -7,7 +7,7 @@
                     <source src="{{ asset('storage/videos/home.mp4') }}" type="video/mp4" />
                 </video>
                 <h1 class="video-text text-uppercase fw-bold"><b>ESBC MENHIR <br>SNEEK</b></h1>
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row mb-5">
                         <div class="col-12">
                             <h1 class="text-uppercase fw-bold text-center">LAATSTE NIEUWS</h1>
