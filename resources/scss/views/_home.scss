@@ -19,6 +19,38 @@ body {
         }
     }
 
+    .news-item-home {
+        height: 200px;
+        background-repeat: no-repeat;
+        background-color: $black;
+        color: $white;
+        position: relative;
+        overflow: hidden;
+
+        h2 {
+            position: relative;
+            z-index: 10;
+        }
+
+        img {
+            position: absolute;
+            bottom: -50px;
+            left: 40px;
+        }
+    }
+    .news-item-home-date {
+        background-color: $red;
+        color: $white;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 10px;
+
+        p {
+            margin: 0;
+        }
+    }
+
     .video-text {
         font-size: 100px;
         color: $white;

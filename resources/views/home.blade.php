@@ -8,10 +8,37 @@
                 </video>
                 <h1 class="video-text text-uppercase fw-bold"><b>ESBC MENHIR <br>SNEEK</b></h1>
                 <div class="container-fluid">
-
-                    @include('layouts.news')
-                    @include('layouts.games')
-                    @include('layouts.sponsors')
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <h1 class="text-uppercase fw-bold text-center">LAATSTE NIEUWS</h1>
+                            <div class="row g-0">
+                                <div class="col-12">
+                                    <div class="news-slider">
+                                        @foreach ($news as $newsItem)
+                                            <div class="news-item-home mx-4 mb-5 mt-2">
+                                                <img src="{{ asset('storage/images/99391-200.png') }}" alt="">
+                                                <div class="row g-0 p-3">
+                                                    <div class="col-12">
+                                                        <h2 class="text-uppercase fw-bold">{{ $newsItem->title }}</h2>
+                                                    </div>
+                                                </div>
+                                                <div class="news-item-home-date">
+                                                    <p class="text-uppercase fw-bold">
+                                                        {{ date_format($newsItem->created_at, 'j M') }}</p>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        @include('layouts.games')
+                    </div>
+                    <div class="row mb-5">
+                        @include('layouts.sponsors')
+                    </div>
                 </div>
             </div>
         </div>

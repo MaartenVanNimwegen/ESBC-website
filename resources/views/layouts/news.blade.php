@@ -12,7 +12,7 @@
                     </div>
                     <div class="row g-0">
                         <div class="col-10"></div>
-                        <div class="col-2 date-block">{{ date_format($newsItem->created_at, "j M") }}</div>
+                        <div class="col-2 date-block">{{ date_format($newsItem->created_at, 'j M') }}</div>
                     </div>
                 </div>
             @endforeach
