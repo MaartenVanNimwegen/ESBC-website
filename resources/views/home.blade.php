@@ -16,7 +16,7 @@
                                     <div class="news-slider">
                                         @foreach ($news as $newsItem)
                                             <div class="news-item-home mx-4 mb-5 mt-2">
-                                                <img src="{{ asset('storage/images/99391-200.png') }}" alt="">
+                                                <img src="{{ asset('storage/images/icons/Basketbal.svg') }}" alt="">
                                                 <div class="row g-0 p-3">
                                                     <div class="col-12">
                                                         <h2 class="text-uppercase fw-bold">{{ $newsItem->title }}</h2>
