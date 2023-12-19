@@ -33,8 +33,13 @@ Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('index');
     Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
-    Route::post('/delete-news/{id}', [NewsController::class, 'delete'])->name('delete');
-    Route::post('/delete-sponsor/{id}', [SponsorController::class, 'delete'])->name('delete');
-    Route::post('/update-news/{id}', [NewsController::class, 'update'])->name('update');
-    Route::post('/update-sponsor/{id}', [SponsorController::class, 'update'])->name('update');
+
+    Route::post('/delete-news/{id}', [NewsController::class, 'delete'])->name('delete-news');
+    Route::post('/delete-sponsor/{id}', [SponsorController::class, 'delete'])->name('delete-sponsor');
+
+    Route::post('/update-news/{id}', [NewsController::class, 'update'])->name('update-news');
+    Route::post('/update-sponsor/{id}', [SponsorController::class, 'update'])->name('update-sponsor');
+
+    Route::post('/add-news', [NewsController::class, 'add'])->name('add-news');
+    Route::post('/add-sponsor', [SponsorController::class, 'add'])->name('add-sponsor');
 });
