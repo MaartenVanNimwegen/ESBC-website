@@ -3,7 +3,7 @@
     <div class="col-12">
         <div class="news-slider">
             @foreach ($news as $newsItem)
-                <div class="news mx-4 mb-5 mt-2">
+                <div class="news mx-4 mb-5 mt-2" id="{{ $newsItem->id }}">
                     <div class="row g-0 p-3">
                         <div class="col-12">
                             <h1>{{ $newsItem->title }}</h1>
