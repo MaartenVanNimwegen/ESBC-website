@@ -12,4 +12,14 @@ class NewsController extends Controller
         $news = News::orderBy('created_at', 'desc')->get();
         return view('nieuws', ['news' => $news]);
     }
+
+    public function delete()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
 }

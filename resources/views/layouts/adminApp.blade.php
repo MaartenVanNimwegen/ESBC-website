@@ -19,7 +19,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     @vite(['resources/scss/app.scss', 'resources/css/app.css', 'resources/js/app.js'])
-    <link rel="shortcut icon" href="{{ asset('storage/images/logo.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('storage/images/logos/logoMenhir_Web.svg') }}" type="image/x-icon">
     <title>ESBC Menhir</title>
 </head>
 
@@ -27,7 +27,7 @@
     <header class="w-100">
         <nav class="navbar navbar-expand-xxl navbar-dark">
             <div class="container-fluid">
-                <img src="{{ asset('storage/images/logo.png') }}" alt="Logo" height="120" class="px-5">
+                <img src="{{ asset('storage/images/logos/logoMenhir_Web.svg') }}" alt="Logo" height="120" class="px-5">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                     aria-label="Toggle navigation">
