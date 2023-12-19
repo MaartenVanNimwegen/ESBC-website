@@ -35,6 +35,7 @@
                             <tr>
                                 <th>Naam</th>
                                 <th>Logo</th>
+                                <th>Link</th>
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -46,6 +47,7 @@
                                     <td><img class="sponsor-image" src="{{ asset($sponsor->picture_location) }}"
                                             alt="">
                                     </td>
+                                    <td>{{ $sponsor->link }}</td>
                                     <td><i class="fa fa-pencil"></i></td>
                                     <td><i class="fa fa-trash"></i></td>
                                 </tr>
