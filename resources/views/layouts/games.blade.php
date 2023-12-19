@@ -28,9 +28,9 @@
 </div>
 <div class="col-lg-6">
     <div class="game">
-        <h1 class="text-uppercase fw-bold text-center">Uitslag laatste wedstrijd</h1>
+        <h1 class="text-uppercase fw-bold text-center">Eerstvolgende wedstrijd</h1>
         <div class="row g-0 game-top-bar">
-            <h1 class="fw-bold">x12</h1>
+            <h1 class="fw-bold">MSE</h1>
         </div>
         <div class="game-picture-container">
             <div class="game-picture-bg">
@@ -49,7 +49,7 @@
                         <img src="{{ asset('storage/images/logoBVG.png') }}" alt="BVG logo">
                     </div>
                 </div>
-                <h2 class="text-uppercase fw-bold">18-21</h2>
+                <h2 class="text-uppercase fw-bold">16 jan</h2>
             </div>
         </div>
     </div>

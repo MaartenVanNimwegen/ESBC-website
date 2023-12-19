@@ -11,3 +11,10 @@
 @import "views/login";
 @import "views/privacy-policy";
 @import "views/dashboard";
+
+// Import fonts
+@import "fonts";
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
