@@ -5,43 +5,44 @@ namespace Database\Seeders;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
-class SponsorSeeder extends Seeder {
-    public function run(): void {
+class SponsorSeeder extends Seeder
+{
+    public function run(): void
+    {
         DB::table('sponsor')->insert([
-            'title' => 'Karwei',
-            'picture_location' => 'storage/images/karwei.png',
+            'title' => 'de Stolp',
+            'picture_location' => 'storage/images/sponsors/de-stolp.png',
             'created_at' => now(),
             'updated_at' => now(),
+            'link' => 'https://www.destolpsneek.nl/',
         ]);
         DB::table('sponsor')->insert([
-            'title' => 'Gamma',
-            'picture_location' => 'storage/images/gamma.png',
+            'title' => 'Garage Betten',
+            'picture_location' => 'storage/images/sponsors/Garage-Betten_JPG-test.png',
             'created_at' => now(),
             'updated_at' => now(),
+            'link' => 'https://betten-sneek.nl/',
         ]);
         DB::table('sponsor')->insert([
-            'title' => 'Action',
-            'picture_location' => 'storage/images/action.png',
+            'title' => 'Schadecentrul Sluyter',
+            'picture_location' => 'storage/images/sponsors/schadecentrum-sluyter-1.png',
             'created_at' => now(),
             'updated_at' => now(),
+            'link' => 'https://sluyterautoschade.nl/',
         ]);
         DB::table('sponsor')->insert([
-            'title' => 'Hema',
-            'picture_location' => 'storage/images/hema.png',
+            'title' => 'Sluyter Schilderwerk',
+            'picture_location' => 'storage/images/sponsors/sluyter-schilderwerk.png',
             'created_at' => now(),
             'updated_at' => now(),
+            'link' => 'https://sluytersneek.nl/',
         ]);
         DB::table('sponsor')->insert([
-            'title' => 'Kruitvat',
-            'picture_location' => 'storage/images/kruitvat.png',
+            'title' => 'Sponsorkliks',
+            'picture_location' => 'storage/images/sponsors/sponsor-sponsorkliks.png',
             'created_at' => now(),
             'updated_at' => now(),
-        ]);
-        DB::table('sponsor')->insert([
-            'title' => 'Etos',
-            'picture_location' => 'storage/images/etos.png',
-            'created_at' => now(),
-            'updated_at' => now(),
+            'link' => 'https://www.sponsorkliks.com/products/shops.php?club=3968&cn=nl&ln=nl',
         ]);
     }
 }

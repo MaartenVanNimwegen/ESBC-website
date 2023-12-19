@@ -2,40 +2,38 @@
 
 namespace Database\Seeders;
 
+use DateTime;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 
-class NewsSeeder extends Seeder {
-    public function run(): void {
+class NewsSeeder extends Seeder
+{
+    public function run(): void
+    {
         DB::table('news')->insert([
-            'title' => 'Nieuwe trainingstijden 1',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rerum ut, dolorum mollitia, asperiores ex accusamus, quas porro laudantium cupiditate eius quidem minima placeat. Quo, suscipit eligendi deleniti quibusdam dolores sapiente? Laudantium facilis facere ipsam omnis, nulla ab. Laboriosam hic aperiam vero unde error ipsam quam cupiditate, dolorem quidem nesciunt non eveniet voluptates mollitia soluta nulla incidunt veniam! Repudiandae iure odit blanditiis temporibus explicabo eaque inventore! Necessitatibus nam magnam nihil eaque maxime eum adipisci officia suscipit dolorum debitis quisquam eligendi, alias, ullam, repellendus totam fuga minima ut inventore! Quia vitae doloremque necessitatibus quod corrupti ipsa voluptatem quas, cumque, consequuntur dignissimos et. Consequuntur unde sequi dolor dolorum ipsa nam illum magni. Praesentium hic doloremque qui commodi neque. Odio fugit libero aspernatur ratione quisquam excepturi sapiente dolorem, aperiam doloribus quasi quidem optio fugiat consectetur delectus enim! Nemo doloribus reiciendis consequuntur ipsa tempore suscipit eligendi atque perspiciatis veniam velit beatae dolore neque, doloremque dolorem, at natus placeat. Quasi dolores repellat recusandae saepe culpa, fuga harum error quos eveniet! Cum laudantium at officiis? Debitis adipisci numquam doloribus obcaecati atque eveniet error tempore maxime incidunt dignissimos eaque odio ab fugiat quaerat commodi pariatur eligendi consequuntur, quas, excepturi magnam nostrum vero. Officia dolorem consequatur beatae fugiat.',
-            'created_at' => now(),
-            'updated_at' => now(),
+            'title' => 'Trainingen kerstvakantie',
+            'description' => 'Allen, Even enige informatie over de trainingen tijdens de laatste dagen van 2023. Volgende week gaan de trainingen gewoon door. RSG: Geen trainingen op 25 december (eerste kerstdag) en 1 januari nieuwjaarsdag). Eerste training weer op maandag 8 januari. Bogerman: Geen training op dinsdag 26 december (tweede kerstdag). Duinterpenhal: Trainingen gaan gewoon door. Graag ook doorgeven aan jullie leden.',
+            'created_at' => '2023-12-16T12:00',
+            'updated_at' => '2023-12-16T12:00',
         ]);
         DB::table('news')->insert([
-            'title' => 'Nieuwe trainingstijden 2',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rerum ut, dolorum mollitia, asperiores ex accusamus, quas porro laudantium cupiditate eius quidem minima placeat. Quo, suscipit eligendi deleniti quibusdam dolores sapiente? Laudantium facilis facere ipsam omnis, nulla ab. Laboriosam hic aperiam vero unde error ipsam quam cupiditate, dolorem quidem nesciunt non eveniet voluptates mollitia soluta nulla incidunt veniam! Repudiandae iure odit blanditiis temporibus explicabo eaque inventore! Necessitatibus nam magnam nihil eaque maxime eum adipisci officia suscipit dolorum debitis quisquam eligendi, alias, ullam, repellendus totam fuga minima ut inventore! Quia vitae doloremque necessitatibus quod corrupti ipsa voluptatem quas, cumque, consequuntur dignissimos et. Consequuntur unde sequi dolor dolorum ipsa nam illum magni. Praesentium hic doloremque qui commodi neque. Odio fugit libero aspernatur ratione quisquam excepturi sapiente dolorem, aperiam doloribus quasi quidem optio fugiat consectetur delectus enim! Nemo doloribus reiciendis consequuntur ipsa tempore suscipit eligendi atque perspiciatis veniam velit beatae dolore neque, doloremque dolorem, at natus placeat. Quasi dolores repellat recusandae saepe culpa, fuga harum error quos eveniet! Cum laudantium at officiis? Debitis adipisci numquam doloribus obcaecati atque eveniet error tempore maxime incidunt dignissimos eaque odio ab fugiat quaerat commodi pariatur eligendi consequuntur, quas, excepturi magnam nostrum vero. Officia dolorem consequatur beatae fugiat.',
-            'created_at' => now(),
-            'updated_at' => now(),
+            'title' => 'ALV ESBC Menhir',
+            'description' => 'Jaarvergadering basketbalclub ESBC Menhir, 07 december 2023
+            Locatie: Eet- en Biercafé 3B Wijde Noorderhorne 2 Sneek Tijd: 20.00 uur Agenda Opening Vaststellen agenda Notulen jaarvergadering; 22 november 2022 Ingekomen stukken Verslag van de voorzitter Verslag van de secretaris Verslag van de wedstrijdsecretaris Verslag van de vertrouwenscontactpersoon Financieel jaarverslag Verslag kascommissie Contributieverhoging m.i.v. seizoen 2024-2025 Begroting seizoen 2022-2023 Bestuursverkiezing: Aftredend, niet herkiesbaar: Jeroen Zantingh Vacature: secretaris Eventuele kandidaten kunnen zich, tot 24 uur voor de vergadering, melden bij de secretaris; secretaris@esbcmenhir.nl Benoeming commissies Rondvraag Sluiting rond 21.30 uur',
+            'created_at' => '2023-11-26T12:00',
+            'updated_at' => '2023-11-26T12:00',
         ]);
         DB::table('news')->insert([
-            'title' => 'Nieuwe trainingstijden 3',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rerum ut, dolorum mollitia, asperiores ex accusamus, quas porro laudantium cupiditate eius quidem minima placeat. Quo, suscipit eligendi deleniti quibusdam dolores sapiente? Laudantium facilis facere ipsam omnis, nulla ab. Laboriosam hic aperiam vero unde error ipsam quam cupiditate, dolorem quidem nesciunt non eveniet voluptates mollitia soluta nulla incidunt veniam! Repudiandae iure odit blanditiis temporibus explicabo eaque inventore! Necessitatibus nam magnam nihil eaque maxime eum adipisci officia suscipit dolorum debitis quisquam eligendi, alias, ullam, repellendus totam fuga minima ut inventore! Quia vitae doloremque necessitatibus quod corrupti ipsa voluptatem quas, cumque, consequuntur dignissimos et. Consequuntur unde sequi dolor dolorum ipsa nam illum magni. Praesentium hic doloremque qui commodi neque. Odio fugit libero aspernatur ratione quisquam excepturi sapiente dolorem, aperiam doloribus quasi quidem optio fugiat consectetur delectus enim! Nemo doloribus reiciendis consequuntur ipsa tempore suscipit eligendi atque perspiciatis veniam velit beatae dolore neque, doloremque dolorem, at natus placeat. Quasi dolores repellat recusandae saepe culpa, fuga harum error quos eveniet! Cum laudantium at officiis? Debitis adipisci numquam doloribus obcaecati atque eveniet error tempore maxime incidunt dignissimos eaque odio ab fugiat quaerat commodi pariatur eligendi consequuntur, quas, excepturi magnam nostrum vero. Officia dolorem consequatur beatae fugiat.',
-            'created_at' => now(),
-            'updated_at' => now(),
+            'title' => 'Training 6 november',
+            'description' => 'Maandag 6 november vervallen de trainingen in de RSG. Dit in verband met de eerste toetsweek van de RSG.',
+            'created_at' => '2023-10-18T12:00',
+            'updated_at' => '2023-10-18T12:00',
         ]);
         DB::table('news')->insert([
-            'title' => 'Nieuwe trainingstijden 4',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rerum ut, dolorum mollitia, asperiores ex accusamus, quas porro laudantium cupiditate eius quidem minima placeat. Quo, suscipit eligendi deleniti quibusdam dolores sapiente? Laudantium facilis facere ipsam omnis, nulla ab. Laboriosam hic aperiam vero unde error ipsam quam cupiditate, dolorem quidem nesciunt non eveniet voluptates mollitia soluta nulla incidunt veniam! Repudiandae iure odit blanditiis temporibus explicabo eaque inventore! Necessitatibus nam magnam nihil eaque maxime eum adipisci officia suscipit dolorum debitis quisquam eligendi, alias, ullam, repellendus totam fuga minima ut inventore! Quia vitae doloremque necessitatibus quod corrupti ipsa voluptatem quas, cumque, consequuntur dignissimos et. Consequuntur unde sequi dolor dolorum ipsa nam illum magni. Praesentium hic doloremque qui commodi neque. Odio fugit libero aspernatur ratione quisquam excepturi sapiente dolorem, aperiam doloribus quasi quidem optio fugiat consectetur delectus enim! Nemo doloribus reiciendis consequuntur ipsa tempore suscipit eligendi atque perspiciatis veniam velit beatae dolore neque, doloremque dolorem, at natus placeat. Quasi dolores repellat recusandae saepe culpa, fuga harum error quos eveniet! Cum laudantium at officiis? Debitis adipisci numquam doloribus obcaecati atque eveniet error tempore maxime incidunt dignissimos eaque odio ab fugiat quaerat commodi pariatur eligendi consequuntur, quas, excepturi magnam nostrum vero. Officia dolorem consequatur beatae fugiat.',
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-        DB::table('news')->insert([
-            'title' => 'Nieuwe trainingstijden 5',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid rerum ut, dolorum mollitia, asperiores ex accusamus, quas porro laudantium cupiditate eius quidem minima placeat. Quo, suscipit eligendi deleniti quibusdam dolores sapiente? Laudantium facilis facere ipsam omnis, nulla ab. Laboriosam hic aperiam vero unde error ipsam quam cupiditate, dolorem quidem nesciunt non eveniet voluptates mollitia soluta nulla incidunt veniam! Repudiandae iure odit blanditiis temporibus explicabo eaque inventore! Necessitatibus nam magnam nihil eaque maxime eum adipisci officia suscipit dolorum debitis quisquam eligendi, alias, ullam, repellendus totam fuga minima ut inventore! Quia vitae doloremque necessitatibus quod corrupti ipsa voluptatem quas, cumque, consequuntur dignissimos et. Consequuntur unde sequi dolor dolorum ipsa nam illum magni. Praesentium hic doloremque qui commodi neque. Odio fugit libero aspernatur ratione quisquam excepturi sapiente dolorem, aperiam doloribus quasi quidem optio fugiat consectetur delectus enim! Nemo doloribus reiciendis consequuntur ipsa tempore suscipit eligendi atque perspiciatis veniam velit beatae dolore neque, doloremque dolorem, at natus placeat. Quasi dolores repellat recusandae saepe culpa, fuga harum error quos eveniet! Cum laudantium at officiis? Debitis adipisci numquam doloribus obcaecati atque eveniet error tempore maxime incidunt dignissimos eaque odio ab fugiat quaerat commodi pariatur eligendi consequuntur, quas, excepturi magnam nostrum vero. Officia dolorem consequatur beatae fugiat.',
-            'created_at' => now(),
-            'updated_at' => now(),
+            'title' => 'Seizoen 2023/2024',
+            'description' => 'In onderstaand nieuws bericht vinden jullie alle informatie met betrekking tot het seizoen 2023/2024. Trainingen De trainingen starten weer vanaf woensdag 6 september 2023. De trainingstijden inclusief de namen van de trainers zijn terug te vinden middels deze link. Teamindeling In onderstaande tabel is de teamindeling voor het seizoen 2023/24 te zien. De groen gekleurde cellen zijn de recreanten binnen de jeugdteams. Mocht het zo zijn dat je je naam mist, stuur dan een mail naar wedstrijdsecretaris@esbcmenhir.nl. De wedstrijdsecretaris zal dan kijken waar het fout gegaan is.',
+            'created_at' => '2023-08-21T12:00',
+            'updated_at' => '2023-08-21T12:00',
         ]);
     }
 }
