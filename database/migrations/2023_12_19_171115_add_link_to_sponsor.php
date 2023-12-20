@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('sponsor', function (Blueprint $table) {
-            $table->string('link', 255);
+            $table->string('url', 255);
         });
     }
 
@@ -21,7 +21,7 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('sponsor', function (Blueprint $table) {
-            $table->dropColumn('link');
+            $table->dropColumn('url');
         });
     }
 };

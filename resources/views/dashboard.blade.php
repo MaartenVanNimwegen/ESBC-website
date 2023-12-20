@@ -14,6 +14,8 @@
                 @endif
                 <h1>Nieuws:</h1>
                 <div class="table-responsive">
+                    <!-- News table -->
+                    {{-- ================================ --}}
                     <table class="table table-striped ">
                         <thead>
                             <tr>
@@ -29,6 +31,7 @@
                                     <td>{{ $newsItem->title }}</td>
                                     <td>{{ $newsItem->description }}</td>
                                     <td>
+                                        {{-- Update news article --}}
                                         <button type="button" class="btn btn-red" data-bs-toggle="modal"
                                             data-bs-target="#updateNewsModal{{ $newsItem->id }}">
                                             <i class="fa fa-pencil"></i>
@@ -70,6 +73,7 @@
                                         </div>
                                     </td>
                                     <td>
+                                        {{-- Delete news article --}}
                                         <button type="button" class="btn btn-red" data-bs-toggle="modal"
                                             data-bs-target="#deleteNewsModal{{ $newsItem->id }}">
                                             <i class="fa fa-trash"></i>
@@ -106,16 +110,15 @@
                     </table>
 
                     <!-- Add news modal -->
-                    {{-- ================================ --}}
-                    <button type="button" class="btn btn-red" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-red" data-bs-toggle="modal" data-bs-target="#addNewsModal">
                         <i class="fa fa-plus"></i>
                     </button>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    <div class="modal fade" id="addNewsModal" tabindex="-1" aria-labelledby="addNewsModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Nieuws toevoegen</h1>
+                                    <h1 class="modal-title fs-5" id="addNewsModalLabel">Nieuws toevoegen</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
@@ -140,6 +143,8 @@
                     {{-- ================================ --}}
                 </div>
 
+                {{-- Sponsor table --}}
+                {{-- ================================ --}}
                 <h1 class="mt-5">Sponsors:</h1>
                 <div class="table-responsive">
                     <table class="table table-striped table-responsive">
@@ -147,7 +152,7 @@
                             <tr>
                                 <th>Naam</th>
                                 <th>Logo</th>
-                                <th>Link</th>
+                                <th>Url</th>
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -156,18 +161,89 @@
                             @foreach ($sponsors as $sponsor)
                                 <tr>
                                     <td>{{ $sponsor->title }}</td>
-                                    <td><img class="sponsor-image" src="{{ asset($sponsor->picture_location) }}"
-                                            alt="">
+                                    <td><img class="sponsor-image"
+                                            src="{{ asset('storage/' . $sponsor->picture_location) }}" alt="">
                                     </td>
-                                    <td>{{ $sponsor->link }}</td>
+                                    <td>{{ $sponsor->url }}</td>
                                     <td><i class="fa fa-pencil"></i></td>
-                                    <td><i class="fa fa-trash"></i></td>
+                                    <td>
+                                        {{-- Delete sponsor --}}
+                                        <button type="button" class="btn btn-red" data-bs-toggle="modal"
+                                            data-bs-target="#deleteSponsorModal{{ $sponsor->id }}">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                        <div class="modal fade" id="deleteSponsorModal{{ $sponsor->id }}"
+                                            tabindex="-1" aria-labelledby="deleteSponsorModal{{ $sponsor->id }}Label"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5"
+                                                            id="deleteSponsorModal{{ $sponsor->id }}Label">Weet je
+                                                            zeker dat
+                                                            je dit nieuwsartikel wilt verwijderen?
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form
+                                                            action="{{ route('delete-sponsor', ['id' => $sponsor->id]) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            <button value="{{ $sponsor->id }}" name="delete-sponsor"
+                                                                class="btn btn-red" type="submit">Ja!</button>
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Annuleer</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    <i class="fa fa-plus"></i>
+
+                    <!-- Add sponsor modal -->
+                    <button type="button" class="btn btn-red" data-bs-toggle="modal" data-bs-target="#addSponsorModal">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                    <div class="modal fade" id="addSponsorModal" tabindex="-1" aria-labelledby="addSponsorModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="addSponsorModalLabel">Sponsor toevoegen</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{ route('add-sponsor') }}" method="post"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        <label for="name">Naam</label>
+                                        <input class="form-control" type="text" name="name" id="name">
+
+                                        <label for="picture">Logo</label>
+                                        <input type="file" id="picture" name="picture" class="form-control"
+                                            accept="image/*">
+
+                                        <label for="url">Url</label>
+                                        <input type="text" name="url" id="url" class="form-control">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-red">Sponsor toevoegen</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                {{-- ================================ --}}
             </div>
         </div>
         </div>
