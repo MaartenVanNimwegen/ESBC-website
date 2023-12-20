@@ -7,7 +7,7 @@
                     <div class="row g-0 p-3">
                         <div class="col-12">
                             <h1>{{ $newsItem->title }}</h1>
-                            <p>{{ $newsItem->description }}</p>
+                            <p style="white-space: pre-line;">{{ $newsItem->description }}</p>
                         </div>
                     </div>
                     <div class="row g-0">
