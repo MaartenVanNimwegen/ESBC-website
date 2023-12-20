@@ -165,7 +165,60 @@
                                             src="{{ asset('storage/' . $sponsor->picture_location) }}" alt="">
                                     </td>
                                     <td>{{ $sponsor->url }}</td>
-                                    <td><i class="fa fa-pencil"></i></td>
+                                    <td>{{-- Update sponsor --}}
+                                        <button type="button" class="btn btn-red" data-bs-toggle="modal"
+                                            data-bs-target="#updateSponsorModal{{ $sponsor->id }}">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                        <div class="modal fade" id="updateSponsorModal{{ $sponsor->id }}"
+                                            tabindex="-1" aria-labelledby="updateSponsorModal{{ $sponsor->id }}Label"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5"
+                                                            id="updateSponsorModal{{ $sponsor->id }}Label">Wijzig sponsor
+                                                            gegevens
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form
+                                                            action="{{ route('update-sponsor', ['id' => $sponsor->id]) }}"
+                                                            method="post">
+                                                            @csrf
+
+                                                            <label for="name">Naam</label>
+                                                            <input type="text" class="form-control" name="name"
+                                                                id="name" value="{{ $sponsor->title }}">
+
+                                                            <label for="url">Url</label>
+                                                            <input class="form-control" type="text" name="url"
+                                                                id="url" value="{{ $sponsor->url }}">
+
+                                                            <label for="url">Huidig logo</label>
+                                                            <div class="logo-preview">
+                                                                <img src="{{ asset('storage/' . $sponsor->picture_location) }}"
+                                                                    alt="Sponsor logo">
+                                                            </div>
+
+                                                            <label for="picture">Nieuw logo</label>
+                                                            <input type="file" id="picture" name="picture"
+                                                                class="form-control" accept="image/*">
+
+                                                            <div class="mt-2">
+                                                                <button value="{{ $sponsor->id }}" name="update-sponsor"
+                                                                    class="btn btn-red" type="submit">Pas aan</button>
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Annuleer</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>
                                         {{-- Delete sponsor --}}
                                         <button type="button" class="btn btn-red" data-bs-toggle="modal"
