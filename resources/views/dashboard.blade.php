@@ -59,7 +59,7 @@
 
                                                             <div class="mt-2">
                                                                 <button value="{{ $newsItem->id }}" name="update-news"
-                                                                    class="btn btn-red" type="submit">Ja!</button>
+                                                                    class="btn btn-red" type="submit">Pas aan</button>
                                                                 <button type="button" class="btn btn-secondary"
                                                                     data-bs-dismiss="modal">Annuleer</button>
                                                             </div>
@@ -91,7 +91,7 @@
                                                             method="post">
                                                             @csrf
                                                             <button value="{{ $newsItem->id }}" name="delete-news"
-                                                                class="btn btn-red" type="submit">Pas aan</button>
+                                                                class="btn btn-red" type="submit">Ja!</button>
                                                             <button type="button" class="btn btn-secondary"
                                                                 data-bs-dismiss="modal">Annuleer</button>
                                                         </form>
