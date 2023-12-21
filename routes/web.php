@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/nieuws', [NewsController::class, 'index'])->name('index');
+Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/teams', function () {
     return view('teams');
 });
@@ -32,7 +33,6 @@ Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('index');
-    Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::post('/delete-news/{id}', [NewsController::class, 'delete'])->name('delete-news');
     Route::post('/delete-sponsor/{id}', [SponsorController::class, 'delete'])->name('delete-sponsor');

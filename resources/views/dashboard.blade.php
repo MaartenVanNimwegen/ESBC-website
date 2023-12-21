@@ -186,7 +186,7 @@
                                                     <div class="modal-body">
                                                         <form
                                                             action="{{ route('update-sponsor', ['id' => $sponsor->id]) }}"
-                                                            method="post">
+                                                            method="post" enctype="multipart/form-data">
                                                             @csrf
 
                                                             <label for="name">Naam</label>

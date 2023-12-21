@@ -27,7 +27,7 @@
                 @endif
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
-                    <label for="email" class="form-label">Email adres</label>
+                    <label for="email" class="form-label">E-mail adres</label>
                     <input type="email" name="email" class="form-control" id="email">
 
                     <label for="password" class="form-label">Wachtwoord</label>
