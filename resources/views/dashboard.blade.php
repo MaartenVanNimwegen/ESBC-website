@@ -12,6 +12,11 @@
                         </ul>
                     </div>
                 @endif
+                @if (Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
                 <h1>Nieuws:</h1>
                 <div class="table-responsive">
                     <!-- News table -->
@@ -234,7 +239,7 @@
                                                         <h1 class="modal-title fs-5"
                                                             id="deleteSponsorModal{{ $sponsor->id }}Label">Weet je
                                                             zeker dat
-                                                            je dit nieuwsartikel wilt verwijderen?
+                                                            je deze sponsor wilt verwijderen?
                                                         </h1>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>

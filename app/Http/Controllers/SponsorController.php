@@ -52,7 +52,7 @@ class SponsorController extends Controller
                 $sponsor->picture_location = $validated['picture'];
                 $sponsor->url = $validated['url'];
                 $sponsor->save();
-                return redirect('dashboard');
+                return redirect()->back()->with('success', 'De sponsor is succesvol gewijzigd!');
             }
         }
         return redirect()->back()->with('error', 'De sponsor is niet gevonden of kon niet worden gewijzigd!');
@@ -92,6 +92,6 @@ class SponsorController extends Controller
         $sponsor->url = $validated['url'];
         $sponsor->save();
 
-        return redirect('dashboard');
+        return redirect()->back()->with('success', 'De sponsor is succesvol toegevoegd!');
     }
 }

@@ -87,6 +87,6 @@ class NewsController extends Controller
         $news->description = $request['description'];
         $news->save();
 
-        return redirect('/dashboard');
+        return redirect()->back()->with('success', 'Het nieuwsartikel is succesvol toegevoegd!');
     }
 }

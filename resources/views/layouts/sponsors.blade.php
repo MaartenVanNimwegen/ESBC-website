@@ -7,7 +7,7 @@
                     <div class="row g-0 p-3">
                         <div class="col-12">
                             <div class="img-parent">
-                                <a target="_black" href="{{ $sponsorItem->link }}"><img
+                                <a target="_black" href="{{ $sponsorItem->url }}"><img
                                         src="{{ asset('storage/' . $sponsorItem->picture_location) }}"></a>
                             </div>
                         </div>
