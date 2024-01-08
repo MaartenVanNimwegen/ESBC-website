@@ -169,7 +169,7 @@
                                     <td><img class="sponsor-image"
                                             src="{{ asset('storage/' . $sponsor->picture_location) }}" alt="">
                                     </td>
-                                    <td>{{ $sponsor->url }}</td>
+                                    <td><a target="_blank" href="{{ $sponsor->url }}">{{ $sponsor->url }}</a></td>
                                     <td>{{-- Update sponsor --}}
                                         <button type="button" class="btn btn-red" data-bs-toggle="modal"
                                             data-bs-target="#updateSponsorModal{{ $sponsor->id }}">
