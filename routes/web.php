@@ -6,6 +6,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InschrijfController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/nieuws', [NewsController::class, 'index'])->name('index');
@@ -28,6 +29,7 @@ Route::get('/inschrijfformulier', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::post('/signup', [InschrijfController::class, 'Signup'])->name('signup');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
 
