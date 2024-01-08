@@ -29,7 +29,8 @@
         <nav class="navbar navbar-expand-xxl navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
-                    <img src="{{ asset('storage/images/logos/logoMenhir_Web.svg') }}" alt="Logo" height="120" class="px-5">
+                    <img src="{{ asset('storage/images/logos/logoMenhir_Web.svg') }}" alt="Logo" height="120"
+                        class="px-5">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
@@ -50,47 +51,47 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a href="/">
-                                    <h4 class="text-uppercase fw-bold">HOME</h4>
+                                <a href="/" class="text-uppercase fw-bold fs-5">
+                                    HOME
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/teams">
-                                    <h4 class="text-uppercase fw-bold">TEAMS</h4>
+                                <a href="/teams" class="text-uppercase fw-bold fs-5">
+                                    TEAMS
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/nieuws">
-                                    <h4 class="text-uppercase fw-bold">NIEUWS</h4>
+                                <a href="/nieuws" class="text-uppercase fw-bold fs-5">
+                                    NIEUWS
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/wedstrijden">
-                                    <h4 class="text-uppercase fw-bold">WEDSTRIJDEN</h4>
+                                <a href="/wedstrijden" class="text-uppercase fw-bold fs-5">
+                                    WEDSTRIJDEN
                                 </a>
                             </li>
                             <li class="nav-item bg-red">
-                                <a href="/lid-worden">
-                                    <h4 class="text-uppercase fw-bold">LID WORDEN?</h4>
+                                <a href="/lid-worden" class="text-uppercase fw-bold fs-5">
+                                    LID WORDEN?
                                 </a>
                             </li>
                         </ul>
                         <div class="d-flex me-5">
-                            <h4 class="m-4">
-                                <a target="_blank" href="https://www.facebook.com/esbcmenhir/">
+                            <p class="m-4">
+                                <a target="_blank" href="https://www.facebook.com/esbcmenhir/" class="fs-5">
                                     <i class="fa fa-facebook"></i>
                                 </a>
-                            </h4>
-                            <h4 class="m-4">
-                                <a target="_blank" href="https://www.instagram.com/esbcmenhir/">
+                            </p>
+                            <p class="m-4">
+                                <a target="_blank" href="https://www.instagram.com/esbcmenhir/" class="fs-5">
                                     <i class="fa fa-instagram"></i>
                                 </a>
-                            </h4>
-                            <h4 class="m-4">
-                                <a target="_blank" href="https://www.x.com/esbcmenhir/">
+                            </p>
+                            <p class="m-4">
+                                <a target="_blank" href="https://www.x.com/esbcmenhir/" class="fs-5">
                                     <i class="fa fa-twitter"></i>
                                 </a>
-                            </h4>
+                            </p>
                         </div>
                     </div>
                 </div>

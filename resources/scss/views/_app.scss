@@ -5,6 +5,11 @@ header {
     }
     li {
         margin: 20px;
+        a {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
     }
 
     @media (min-width: 1400px) {
@@ -26,8 +31,7 @@ header {
 
     .bg-red {
         background-color: $red;
-        padding: 0px 0px 0px 5px;
-        width: 180px;
+        padding: 0 5px 0 5px;
     }
 }
 footer {
