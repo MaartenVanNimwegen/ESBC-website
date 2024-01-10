@@ -32,9 +32,9 @@
                     <img src="{{ asset('storage/images/logos/logoMenhir_Web.svg') }}" alt="Logo" height="120"
                         class="px-5">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                <button class="navbar-toggler border-0 shadow-0" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="fa fa-bars white-text"></i>
                 </button>
                 <div class="offcanvas offcanvas-end background-black" tabindex="-1" id="offcanvasDarkNavbar"
                     aria-labelledby="offcanvasDarkNavbarLabel">
