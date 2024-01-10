@@ -7,16 +7,12 @@ use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InschrijfController;
+use App\Http\Controllers\GameController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/nieuws', [NewsController::class, 'index'])->name('index');
 Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::get('/teams', function () {
-    return view('teams');
-});
-Route::get('/wedstrijden', function () {
-    return view('wedstrijden');
-});
+Route::get('/wedstrijden', [GameController::class, 'Index']);
 Route::get('/lid-worden', function () {
     return view('lid-worden');
 });
