@@ -14,5 +14,6 @@ class Game extends Model
         'tijd',
         'thuisPloeg',
         'uitPloeg',
+        'sporthal',
     ];
 }

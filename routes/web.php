@@ -8,11 +8,14 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InschrijfController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\TeamController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/nieuws', [NewsController::class, 'index'])->name('index');
 Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/wedstrijden', [GameController::class, 'Index']);
+Route::get('/teams', [TeamController::class, 'Index']);
+Route::get('/team-info/{plg_ID}', [TeamController::class, 'Info'])->name('team-info');
 Route::get('/lid-worden', function () {
     return view('lid-worden');
 });
