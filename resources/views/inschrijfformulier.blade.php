@@ -5,68 +5,77 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <h1 class="text-uppercase fw-bold">Inschrijfformulier</h1>
-                        <form action="" method="post">
+                        <form action="{{ route('signup') }}" method="post" enctype="multipart/form-data">
                             @csrf
+
                             <p class="fw-bold">Inschrijfformulier en machtiging ESBC Menhir uit Sneek</p>
                             <p class="fw-bold">Persoonsgegevens nieuw lid:</p>
 
                             <label class="form-label" for="voornaam">Voornaam:</label>
-                            <input class="form-control" type="text" name="voornaam" id="voornaam">
+                            <input class="form-control" type="text" name="NLvoornaam" id="voornaam">
 
                             <label class="form-label" for="achternaam">Achternaam:</label>
-                            <input class="form-control" type="text" name="achternaam" id="achternaam">
+                            <input class="form-control" type="text" name="NLachternaam" id="achternaam">
 
                             <label class="form-label" for="email">E-mail adres:</label>
-                            <input class="form-control" type="text" name="email" id="email">
+                            <input class="form-control" type="text" name="NLemail" id="email">
 
                             <label class="form-label" for="email-ouders">E-mail adres ouders/voogd:</label>
-                            <input class="form-control" type="text" name="email-ouders" id="email-ouders">
+                            <input class="form-control" type="text" name="NLemailOudersVoogd" id="email-ouders">
 
                             <label class="form-label" for="postcode">Postcode:</label>
-                            <input class="form-control" type="text" name="postcode" id="postcode">
+                            <input class="form-control" type="text" name="NLpostcode" id="postcode">
 
                             <label class="form-label" for="huisnummer">Huisnummer:</label>
-                            <input class="form-control" type="text" name="huisnummer" id="huisnummer">
+                            <input class="form-control" type="text" name="NLhuisnummer" id="huisnummer">
 
                             <label class="form-label" for="geboortedatum">Geboortedatum:</label>
-                            <input class="form-control" type="text" name="geboortedatum" id="geboortedatum">
+                            <input class="form-control" type="text" name="NLgeboortedatum" id="geboortedatum">
 
                             <label class="form-label" for="geslacht">Geslacht:</label>
-                            <select class="form-select" name="geslacht" id="geslacht">
-                                <option value="man">Man</option>
-                                <option value="vrouw">Vrouw</option>
+                            <select class="form-select" name="NLgeslacht" id="geslacht">
+                                <option value="0">Man</option>
+                                <option value="1">Vrouw</option>
                             </select>
 
                             <label class="form-label" for="telefoonnummer">Telefoonnummer:</label>
-                            <input class="form-control" type="text" name="telefoonnummer" id="telefoonnummer">
+                            <input class="form-control" type="tel" name="NLtelefoonnummer" id="telefoonnummer">
 
                             <br>
                             <p class="fw-bold">Persoonsgegevens rekeninghouder:</p>
 
                             <label class="form-label" for="voorlettersenachternaam">Voorletters en achternaam:</label>
-                            <input class="form-control" type="text" name="voorlettersenachternaam"
+                            <input class="form-control" type="text" name="RHvoorletterachternaam"
                                 id="voorlettersenachternaam">
 
                             <label class="form-label" for="iban">IBAN:</label>
-                            <input class="form-control" type="text" name="iban" id="iban">
+                            <input class="form-control" type="text" name="RHiban" id="iban">
 
                             <label class="form-label" for="telefoonnummerrekeninghouder">Telefoonnummer
                                 rekeninghouder:</label>
-                            <input class="form-control" type="text" name="telefoonnummerrekeninghouder"
-                                id="telefoonnummerrekeninghouder">
+                            <input class="form-control" type="tel" name="RHtelefoon" id="telefoonnummerrekeninghouder">
 
-                            <label class="form-label" for="emailrekeninghouder">E-mail adres rekeninghouder:</label>
-                            <input class="form-control" type="text" name="emailrekeninghouder" id="emailrekeninghouder">
+                            <label class="form-label" for="emailrekeninghouder">E-mailadres rekeninghouder:</label>
+                            <input class="form-control" type="text" name="RHemail" id="emailrekeninghouder">
 
                             <label class="form-label" for="lidmaatschap">Type lidmaatschap:</label>
-                            <select class="form-select" name="lidmaatschap" id="lidmaatschap">
-                                <option value="competitie">Competitie</option>
-                                <option value="recreant">Recreant</option>
+                            <select class="form-select" name="type" id="lidmaatschap">
+                                <option value="0">Competitie</option>
+                                <option value="1">Recreant</option>
                             </select>
 
                             <label class="form-label" for="pasfoto">Pasfoto:</label>
-                            <input class="form-control" type="file" name="pasfoto" id="pasfoto">
+                            <input type="file" id="pasfoto" name="pasfoto" class="form-control" accept="image/*">
 
                             <br>
                             <p class="fw-bold">Persoonsgegevens rekeninghouder:</p>
@@ -77,31 +86,31 @@
                             <label for="functie">Functie's</label><br>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label" for="functie">Bestuur</label>
-                                <input class="form-check-input" type="checkbox" id="functie" value="bestuur">
+                                <input name="bestuur" class="form-check-input" type="checkbox" id="functie">
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label" for="functie">Activiteiten</label>
-                                <input class="form-check-input" type="checkbox" id="functie" value="activiteiten">
+                                <input name="activiteiten" class="form-check-input" type="checkbox" id="functie">
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label" for="functie">Trainer</label>
-                                <input class="form-check-input" type="checkbox" id="functie" value="trainer">
+                                <input name="trainer" class="form-check-input" type="checkbox" id="functie">
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label" for="functie">Coach</label>
-                                <input class="form-check-input" type="checkbox" id="functie" value="coach">
+                                <input name="coach" class="form-check-input" type="checkbox" id="functie">
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label" for="functie">Scheidsrechter</label>
-                                <input class="form-check-input" type="checkbox" id="functie" value="scheidsrechter">
+                                <input name="scheidsrechter" class="form-check-input" type="checkbox" id="functie">
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label" for="functie">Teammanager</label>
-                                <input class="form-check-input" type="checkbox" id="functie" value="teammanager">
+                                <input name="teammanager" class="form-check-input" type="checkbox" id="functie">
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label" for="functie">Jeugdlid onder 14</label>
-                                <input class="form-check-input" type="checkbox" id="functie" value="jeugdlidonder14">
+                                <input name="jeugdlidonder14" class="form-check-input" type="checkbox" id="functie">
                             </div>
 
                             <br>

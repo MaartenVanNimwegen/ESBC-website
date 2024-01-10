@@ -25,6 +25,12 @@ class Signup extends Model
         'RHemail',
         'RHtype',
         'RHpasfoto',
-        'functies',
+        'bestuur',
+        'activiteiten',
+        'trainer',
+        'coach',
+        'scheidsrechter',
+        'teammanager',
+        'jeugdlidonder14',
     ];
 }
