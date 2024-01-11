@@ -12,6 +12,12 @@
     margin-top: 1.5rem;
 }
 
+.team {
+    button {
+        border: none;
+    }
+}
+
 .team-link::before {
     content: "";
     position: absolute;
