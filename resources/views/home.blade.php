@@ -15,7 +15,7 @@
                                 <div class="col-12">
                                     <div class="news-slider">
                                         @foreach ($news as $newsItem)
-                                            <a href="/nieuws#{{ $newsItem->id }}">
+                                            <a class="text-decoration-none" href="/nieuws#{{ $newsItem->id }}">
                                                 <div class="news-item-home mx-4 mb-5 mt-2">
                                                     <img src="{{ asset('storage/images/icons/Basketbal.svg') }}"
                                                         alt="">
