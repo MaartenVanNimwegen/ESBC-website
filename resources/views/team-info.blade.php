@@ -4,8 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <h1 class="text-uppercase fw-bold">{{ $teamName }}</h1>
                 @if ($upcommingGames !== 'error')
-                    <h1 class="text-uppercase fw-bold">Komende wedstrijden</h1>
+                    <h3 class="text-uppercase fw-bold">Komende wedstrijden</h3>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead class="bg-head">

@@ -15,7 +15,7 @@ Route::get('/nieuws', [NewsController::class, 'index'])->name('index');
 Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/wedstrijden', [GameController::class, 'Index']);
 Route::get('/teams', [TeamController::class, 'Index']);
-Route::get('/team-info/{plg_ID}', [TeamController::class, 'Info'])->name('team-info');
+Route::post('/team-info', [TeamController::class, 'Info'])->name('team-info');
 Route::get('/lid-worden', function () {
     return view('lid-worden');
 });
