@@ -27,7 +27,8 @@
     <header class="w-100">
         <nav class="navbar navbar-expand-xxl navbar-dark">
             <div class="container-fluid">
-                <img src="{{ asset('storage/images/logos/logoMenhir_Web.svg') }}" alt="Logo" height="120" class="px-5">
+                <a href="/"><img src="{{ asset('storage/images/logos/logoMenhir_Web.svg') }}"
+                        alt="Logo" height="120" class="px-5"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                     aria-label="Toggle navigation">

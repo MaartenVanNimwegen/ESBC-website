@@ -10,6 +10,8 @@ use App\Models\Stand;
 use App\Models\Uitslag;
 use App\Models\Team;
 use DateTime;
+use Illuminate\Support\Facades\Storage;
+
 
 use function Laravel\Prompts\error;
 
@@ -109,49 +111,97 @@ class TeamController extends Controller
         }
     }
 
-    private function GetStand1($cmp_ID)
+    public function delete($id)
     {
-        $response = Http::get("https://db.basketball.nl/db/json/stand.pl?cmp_ID=$cmp_ID");
-        if ($response->successful()) {
-            $data = json_decode($response->body(), true);
-            $standen = [];
-            foreach ($data['stand'] as $stand) {
-                $standModel = new Stand();
-                $standModel->rang = $stand['rang'];
-                $standModel->afko = $stand['afko'];
-                $standModel->gespeeld = $stand['gespeeld'];
-                $standModel->punten = $stand['punten'];
-                $standModel->eigenScore = $stand['eigenscore'];
-                $standModel->tegenScore = $stand['tegenscore'];
-                $standModel->saldo = $stand['saldo'];
-                $standen[] = $standModel;
-            }
-            return $standen;
-        } else {
-            return false;
+        $team = Team::find($id);
+        if ($team) {
+            Storage::disk('public')->delete($team->picture_location);
+            $team->delete();
+            return redirect()->back()->with('success', 'Het team is succesvol verwijderd');
         }
+
+        return redirect()->back()->with('error', 'Het team is niet gevonden of kon niet worden verwijderd');
     }
 
-    private function GetStand2($cmp_ID)
+    public function update($id)
     {
-        $response = Http::get("https://db.basketball.nl/db/json/stand.pl?cmp_ID=$cmp_ID");
-        if ($response->successful()) {
-            $data = json_decode($response->body(), true);
-            $standen = [];
-            foreach ($data['stand'] as $stand) {
-                $standModel = new Stand();
-                $standModel->rang = $stand['rang'];
-                $standModel->afko = $stand['afko'];
-                $standModel->gespeeld = $stand['gespeeld'];
-                $standModel->punten = $stand['punten'];
-                $standModel->eigenScore = $stand['eigenscore'];
-                $standModel->tegenScore = $stand['tegenscore'];
-                $standModel->saldo = $stand['saldo'];
-                $standen[] = $standModel;
+        $validated = request()->validate(
+            [
+                'name' => 'required|string|min:3|max:255',
+                'plg_ID' => 'required|regex:^\s*-*[0-9]{1,10}\s*$^|max:100',
+                'cmp_ID' => 'required|regex:^\s*-*[0-9]{1,10}\s*$^|max:100',
+                'picture' => 'image|required',
+            ],
+            [
+                'name.required' => 'De naam van het team is verplicht!',
+                'name.string' => 'De naam van het team is van een verkeerd type!',
+                'name.min' => 'De naam van het team is te kort!',
+                'name.max' => 'De naam van het team is te lang!',
+                'plg_ID.required' => 'Een ploeg ID is verplicht!',
+                'plg_ID.integer' => 'Een ploeg ID moet een getal zijn!',
+                'plg_ID.max' => 'Het ploeg ID mag maximaal 10 cijfers zijn!',
+                'cmp_ID.required' => 'Een competitie ID is verplicht!',
+                'cmp_ID.integer' => 'Een competitie ID moet een getal zijn!',
+                'cmp_ID.max' => 'Het competitie ID mag maximaal 10 cijfers zijn!',
+                'picture.image' => 'Het logo van het team moet van het type: jpeg, jpg, png of gif zijn!',
+                'picture.required' => 'Het logo van het team is verplicht!',
+            ]
+        );
+
+        $team = Team::find($id);
+        if ($team) {
+            if (request()->has('picture')) {
+                $picturePath = request()->file('picture')->store('images/sponsors', 'public');
+                $validated['picture'] = $picturePath;
+                $team->name = $validated['name'];
+                $team->plg_ID = $validated['plg_ID'];
+                $team->cmp_ID = $validated['cmp_ID'];
+                $team->picture_location = $validated['picture'];
+                $team->save();
+                return redirect()->back()->with('success', 'Het team is succesvol gewijzigd!');
             }
-            return $standen;
-        } else {
-            return false;
         }
+        return redirect()->back()->with('error', 'Het team is niet gevonden of kon niet worden gewijzigd!');
+    }
+
+    public function add()
+    {
+        $validated = request()->validate(
+            [
+                'name' => 'required|string|min:3|max:255',
+                'plg_ID' => 'required|regex:^\s*-*[0-9]{1,10}\s*$^|max:100',
+                'cmp_ID' => 'required|regex:^\s*-*[0-9]{1,10}\s*$^|max:100',
+                'picture' => 'image|required',
+            ],
+            [
+                'name.required' => 'De naam van het team is verplicht!',
+                'name.string' => 'De naam van het team is van een verkeerd type!',
+                'name.min' => 'De naam van het team is te kort!',
+                'name.max' => 'De naam van het team is te lang!',
+                'plg_ID.required' => 'Een ploeg ID is verplicht!',
+                'plg_ID.integer' => 'Een ploeg ID moet een getal zijn!',
+                'plg_ID.max' => 'Het ploeg ID mag maximaal 10 cijfers zijn!',
+                'cmp_ID.required' => 'Een competitie ID is verplicht!',
+                'cmp_ID.integer' => 'Een competitie ID moet een getal zijn!',
+                'cmp_ID.max' => 'Het competitie ID mag maximaal 10 cijfers zijn!',
+                'picture.image' => 'Het logo van het team moet van het type: jpeg, jpg, png of gif zijn!',
+                'picture.required' => 'Het logo van het team is verplicht!',
+            ]
+        );
+
+
+        if (request()->has('picture')) {
+            $picturePath = request()->file('picture')->store('images/sponsors', 'public');
+            $validated['picture'] = $picturePath;
+        }
+
+        $team = new Team();
+        $team->name = $validated['name'];
+        $team->plg_ID = $validated['plg_ID'];
+        $team->cmp_ID = $validated['cmp_ID'];
+        $team->picture_location = $validated['picture'];
+        $team->save();
+
+        return redirect()->back()->with('success', 'Het team is succesvol toegevoegd!');
     }
 }

@@ -302,6 +302,166 @@
                     </div>
                 </div>
                 {{-- ================================ --}}
+
+                {{-- Teams table --}}
+                {{-- ================================ --}}
+                <h1 class="mt-5">Teams:</h1>
+                <div class="table-responsive">
+                    <table class="table table-striped table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Naam</th>
+                                <th>Ploeg ID</th>
+                                <th>Competitie ID</th>
+                                <th>Foto</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($teams as $team)
+                                <tr>
+                                    <td>{{ $team->name }}</td>
+                                    <td>{{ $team->plg_ID }}</td>
+                                    <td>{{ $team->cmp_ID }}</td>
+                                    <td>
+                                        <img class="sponsor-image"
+                                            src="{{ asset('storage/' . $team->picture_location) }}" alt="">
+                                    </td>
+                                    <td>{{-- Update team --}}
+                                        <button type="button" class="btn btn-red" data-bs-toggle="modal"
+                                            data-bs-target="#updateTeamModal{{ $team->id }}">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                        <div class="modal fade" id="updateTeamModal{{ $team->id }}" tabindex="-1"
+                                            aria-labelledby="updateTeamModal{{ $team->id }}Label" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5"
+                                                            id="updateTeamModal{{ $team->id }}Label">Wijzig team
+                                                            gegevens
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{ route('update-team', ['id' => $team->id]) }}"
+                                                            method="post" enctype="multipart/form-data">
+                                                            @csrf
+
+                                                            <label for="name">Naam</label>
+                                                            <input type="text" class="form-control" name="name"
+                                                                id="name" value="{{ $team->name }}">
+
+                                                            <label for="plg_ID">Ploeg ID</label>
+                                                            <input class="form-control" type="text" name="plg_ID"
+                                                                id="plg_ID" value="{{ $team->plg_ID }}">
+
+                                                            <label for="cmp_ID">Competitie ID</label>
+                                                            <input class="form-control" type="text" name="cmp_ID"
+                                                                id="cmp_ID" value="{{ $team->cmp_ID }}">
+
+                                                            <label for="foto">Huidig logo</label>
+                                                            <div class="logo-preview">
+                                                                <img src="{{ asset('storage/' . $team->picture_location) }}"
+                                                                    alt="Team logo">
+                                                            </div>
+
+                                                            <label for="picture">Nieuwe foto</label>
+                                                            <input type="file" id="picture" name="picture"
+                                                                class="form-control" accept="image/*">
+
+                                                            <div class="mt-2">
+                                                                <button value="{{ $team->id }}" name="update-team"
+                                                                    class="btn btn-red" type="submit">Pas aan</button>
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Annuleer</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {{-- Delete team --}}
+                                        <button type="button" class="btn btn-red" data-bs-toggle="modal"
+                                            data-bs-target="#deleteTeamModal{{ $team->id }}">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                        <div class="modal fade" id="deleteTeamModal{{ $team->id }}" tabindex="-1"
+                                            aria-labelledby="deleteTeamModal{{ $team->id }}Label" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5"
+                                                            id="deleteTeamModal{{ $team->id }}Label">Weet je
+                                                            zeker dat
+                                                            je dit team wilt verwijderen?
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{ route('delete-team', ['id' => $team->id]) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            <button value="{{ $team->id }}" name="delete-team"
+                                                                class="btn btn-red" type="submit">Ja!</button>
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Annuleer</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+
+                    <!-- Add team modal -->
+                    <button type="button" class="btn btn-red" data-bs-toggle="modal" data-bs-target="#addTeamModal">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                    <div class="modal fade" id="addTeamModal" tabindex="-1" aria-labelledby="addTeamModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="addTeamModalLabel">Team toevoegen</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{ route('add-team') }}" method="post" enctype="multipart/form-data">
+                                        @csrf
+                                        <label for="name">Naam</label>
+                                        <input class="form-control" type="text" name="name" id="name">
+
+                                        <label for="plg_ID">Ploeg ID</label>
+                                        <input class="form-control" type="text" name="plg_ID" id="plg_ID">
+
+                                        <label for="name">Competitie ID</label>
+                                        <input class="form-control" type="text" name="cmp_ID" id="cmp_ID">
+
+                                        <label for="picture">Foto</label>
+                                        <input type="file" id="picture" name="picture" class="form-control"
+                                            accept="image/*">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-red">Team toevoegen</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- ================================ --}}
             </div>
         </div>
         </div>

@@ -37,10 +37,13 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/delete-news/{id}', [NewsController::class, 'delete'])->name('delete-news');
     Route::post('/delete-sponsor/{id}', [SponsorController::class, 'delete'])->name('delete-sponsor');
+    Route::post('/delete-team/{id}', [TeamController::class, 'delete'])->name('delete-team');
 
     Route::post('/update-news/{id}', [NewsController::class, 'update'])->name('update-news');
     Route::post('/update-sponsor/{id}', [SponsorController::class, 'update'])->name('update-sponsor');
+    Route::post('/update-team/{id}', [TeamController::class, 'update'])->name('update-team');
 
     Route::post('/add-news', [NewsController::class, 'add'])->name('add-news');
     Route::post('/add-sponsor', [SponsorController::class, 'add'])->name('add-sponsor');
+    Route::post('/add-team', [TeamController::class, 'add'])->name('add-team');
 });
