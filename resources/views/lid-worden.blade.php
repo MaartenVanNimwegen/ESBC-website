@@ -18,7 +18,7 @@
                         Mocht
                         je vragen hebben of meer informatie willen dan kun je contact opnemen door een mail te sturen
                         naar
-                        info@esbcmenhir.nl.</p>
+                        <b><a href="mailto:info@esbcmenhir.nl">info@esbcmenhir.nl</a></b>.</p>
 
                     <h2 class="fw-bold">Aanmelden nieuwe leden</h2>
                     <p>Je kunt je online aanmelden als lid van de basketbalvereniging ESBC Menhir door naar het
