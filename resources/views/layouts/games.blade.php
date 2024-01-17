@@ -2,7 +2,7 @@
     <div class="game">
         <h1 class="text-uppercase fw-bold text-center">Uitslag laatste wedstrijd</h1>
         <div class="row g-0 game-top-bar">
-            <h1 class="fw-bold">x12</h1>
+            <h1 class="fw-bold">MSE 1</h1>
         </div>
         <div class="game-picture-container">
             <div class="game-picture-bg">
@@ -12,16 +12,22 @@
             <div class="game-overlay">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="team">
-                        <h3>ESBC Menhir</h3>
-                        <img src="{{ asset('storage/images/logos/logoMenhir_Web.svg') }}" alt="ESBC Menhir logo">
+                        <h3>{{ $lastGame->Thuisteam }}</h3>
+                        @php
+                            $loc = App\Http\Controllers\HomeController::GetClubLogo($lastGame->Thuisteam);
+                        @endphp
+                        <img src='{{ asset("$loc") }}'>
                     </div>
                     <p class="text-uppercase fw-bold">vs</p>
                     <div class="team">
-                        <h3>BV Groningen</h3>
-                        <img src="{{ asset('storage/images/logos/image1.png') }}" alt="BVG logo">
+                        <h3>{{ $lastGame->Uitteam }}</h3>
+                        @php
+                            $loc = App\Http\Controllers\HomeController::GetClubLogo($lastGame->Uitteam);
+                        @endphp
+                        <img src='{{ asset("$loc") }}'>
                     </div>
                 </div>
-                <h2 class="text-uppercase fw-bold">18-21</h2>
+                <h2 class="text-uppercase fw-bold">{{ $lastGame->ScoreThuis }} - {{ $lastGame->ScoreUit }}</h2>
             </div>
         </div>
     </div>
