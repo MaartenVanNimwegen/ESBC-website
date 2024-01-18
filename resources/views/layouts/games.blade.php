@@ -10,24 +10,31 @@
                 <img src="{{ asset('storage/images/games/game-bg-1.png') }}">
             </div>
             <div class="game-overlay">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="team">
-                        <h3>{{ $lastGame->Thuisteam }}</h3>
-                        @php
-                            $loc = App\Http\Controllers\HomeController::GetClubLogo($lastGame->Thuisteam);
-                        @endphp
-                        <img src='{{ asset("$loc") }}'>
+                @if ($lastGame !== 'error')
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="team">
+                            <h3>{{ $lastGame->Thuisteam }}</h3>
+                            @php
+                                $loc = App\Http\Controllers\HomeController::GetClubLogo($lastGame->Thuisteam);
+                            @endphp
+                            <img src='{{ asset("$loc") }}'>
+                        </div>
+                        <p class="text-uppercase fw-bold">vs</p>
+                        <div class="team">
+                            <h3>{{ $lastGame->Uitteam }}</h3>
+                            @php
+                                $loc = App\Http\Controllers\HomeController::GetClubLogo($lastGame->Uitteam);
+                            @endphp
+                            <img src='{{ asset("$loc") }}'>
+                        </div>
                     </div>
-                    <p class="text-uppercase fw-bold">vs</p>
-                    <div class="team">
-                        <h3>{{ $lastGame->Uitteam }}</h3>
-                        @php
-                            $loc = App\Http\Controllers\HomeController::GetClubLogo($lastGame->Uitteam);
-                        @endphp
-                        <img src='{{ asset("$loc") }}'>
+                    <h2 class="text-uppercase fw-bold">{{ $lastGame->ScoreThuis }} - {{ $lastGame->ScoreUit }}</h2>
+                @else
+                    <div>
+                        <p>Er is iets fout gegaan bij het ophalen van de laatste wedstrijd bij de externe bron. Excuses
+                            voor het ongemak.</p>
                     </div>
-                </div>
-                <h2 class="text-uppercase fw-bold">{{ $lastGame->ScoreThuis }} - {{ $lastGame->ScoreUit }}</h2>
+                @endif
             </div>
         </div>
     </div>
@@ -44,24 +51,30 @@
                 <img src="{{ asset('storage/images/games/game-bg-2.png') }}">
             </div>
             <div class="game-overlay">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="team">
-                        <h3>{{ $firstGame->thuisPloeg }}</h3>
-                        @php
-                            $loc = App\Http\Controllers\HomeController::GetClubLogo($firstGame->thuisPloeg);
-                        @endphp
-                        <img src='{{ asset("$loc") }}'>
+                @if ($firstGame !== 'error')
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="team">
+                            <h3>{{ $firstGame->thuisPloeg }}</h3>
+                            @php
+                                $loc = App\Http\Controllers\HomeController::GetClubLogo($firstGame->thuisPloeg);
+                            @endphp
+                            <img src='{{ asset("$loc") }}'>
+                        </div>
+                        <p class="text-uppercase fw-bold">vs</p>
+                        <div class="team">
+                            <h3>{{ $firstGame->uitPloeg }}</h3>
+                            @php
+                                $loc = App\Http\Controllers\HomeController::GetClubLogo($firstGame->uitPloeg);
+                            @endphp
+                            <img src='{{ asset("$loc") }}'>
+                        </div>
                     </div>
-                    <p class="text-uppercase fw-bold">vs</p>
-                    <div class="team">
-                        <h3>{{ $firstGame->uitPloeg }}</h3>
-                        @php
-                            $loc = App\Http\Controllers\HomeController::GetClubLogo($firstGame->uitPloeg);
-                        @endphp
-                        <img src='{{ asset("$loc") }}'>
-                    </div>
+                    <h2 class="text-uppercase fw-bold">{{ date_format($firstGame->datum, 'd M') }}</h2>
+                @else
+                <div>
+                    <p>Er is iets fout gegaan bij het ophalen van de volgende wedstrijd bij de externe bron. Excuses voor het ongemak.</p>
                 </div>
-                <h2 class="text-uppercase fw-bold">{{ date_format($firstGame->datum, 'd M') }}</h2>
+                @endif
             </div>
         </div>
     </div>
