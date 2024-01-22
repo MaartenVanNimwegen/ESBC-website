@@ -29,7 +29,7 @@ Route::get('/login', function () {
     return view('login');
 });
 Route::post('/signup', [InschrijfController::class, 'Signup'])->name('signup');
-Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/login', [AuthController::class, 'ViewLogin'])->name('ViewLogin');
 Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
 
 Route::group(['middleware' => 'auth'], function () {
