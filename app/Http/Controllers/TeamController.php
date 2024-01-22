@@ -17,13 +17,13 @@ use function Laravel\Prompts\error;
 
 class TeamController extends Controller
 {
-    public function Index()
+    public function ViewTeam()
     {
         $teams = Team::all();
         return view('teams', ['teams' => $teams]);
     }
 
-    public function Info(Request $request)
+    public function ViewTeamInfo(Request $request)
     {
         $team = Team::find($request->id);
         $upcommingGames = $this->GetUpcommingGames($team->plg_ID);

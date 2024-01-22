@@ -10,12 +10,12 @@ use App\Http\Controllers\InschrijfController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\TeamController;
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/nieuws', [NewsController::class, 'index'])->name('index');
+Route::get('/', [HomeController::class, 'ViewHome'])->name('ViewHome');
+Route::get('/nieuws', [NewsController::class, 'ViewNews'])->name('ViewNews');
 Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::get('/wedstrijden', [GameController::class, 'Index']);
-Route::get('/teams', [TeamController::class, 'Index']);
-Route::post('/team-info', [TeamController::class, 'Info'])->name('team-info');
+Route::get('/wedstrijden', [GameController::class, 'ViewGame']);
+Route::get('/teams', [TeamController::class, 'ViewTeam']);
+Route::post('/team-info', [TeamController::class, 'ViewTeamInfo'])->name('team-info');
 Route::get('/lid-worden', function () {
     return view('lid-worden');
 });
@@ -33,7 +33,7 @@ Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('index');
+    Route::get('/dashboard', [DashboardController::class, 'ViewDashboard'])->name('ViewDashboard');
 
     Route::post('/delete-news/{id}', [NewsController::class, 'delete'])->name('delete-news');
     Route::post('/delete-sponsor/{id}', [SponsorController::class, 'delete'])->name('delete-sponsor');

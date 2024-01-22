@@ -9,7 +9,7 @@ use App\Models\Team;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function ViewDashboard()
     {
         $news = News::all();
         $sponsors = Sponsor::all();

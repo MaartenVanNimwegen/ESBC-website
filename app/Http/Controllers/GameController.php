@@ -9,7 +9,7 @@ use DateTime;
 
 class GameController extends Controller
 {
-    public function Index()
+    public function ViewGame()
     {
         $response = Http::get('http://db.basketball.nl/db/json/wedstrijd.pl?clb_ID=341');
         if ($response->successful()) {

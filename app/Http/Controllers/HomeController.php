@@ -12,7 +12,7 @@ use App\Models\Uitslag;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function ViewHome()
     {
         $news = News::orderBy('created_at', 'desc')->take(3)->get();
         $sponsors = Sponsor::get();

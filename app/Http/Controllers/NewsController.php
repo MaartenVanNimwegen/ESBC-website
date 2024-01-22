@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Validator;
 
 class NewsController extends Controller
 {
-    public function index()
+    public function ViewNews()
     {
         $news = News::orderBy('created_at', 'desc')->get();
         return view('nieuws', ['news' => $news]);
