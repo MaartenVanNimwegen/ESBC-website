@@ -148,7 +148,6 @@
                 </div>
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 pb-4">
                     <h6 class="text-uppercase fw-bold mb-4"><a href="/privacy-policy">Privacypolicy</a></h6>
-                    <p><a href="/login">Login</a></p>
                 </div>
             </div>
         </div>
