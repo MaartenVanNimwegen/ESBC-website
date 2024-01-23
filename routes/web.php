@@ -9,11 +9,13 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InschrijfController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TrainingenController;
 
 Route::get('/', [HomeController::class, 'ViewHome'])->name('ViewHome');
 Route::get('/nieuws', [NewsController::class, 'ViewNews'])->name('ViewNews');
 Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/wedstrijden', [GameController::class, 'ViewGame']);
+Route::get('/trainingen', [TrainingenController::class, 'ViewTrainingen']);
 Route::get('/teams', [TeamController::class, 'ViewTeam']);
 Route::post('/team-info', [TeamController::class, 'ViewTeamInfo'])->name('team-info');
 Route::get('/lid-worden', function () {

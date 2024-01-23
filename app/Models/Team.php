@@ -15,4 +15,9 @@ class Team extends Model
         'cmp_ID',
         'picture_location'
     ];
+
+    public function trainings()
+    {
+        return $this->hasMany(Training::class);
+    }
 }

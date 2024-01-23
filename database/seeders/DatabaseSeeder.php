@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
             NewsSeeder::class,
             AdminSeeder::class,
             Teams::class,
+            TrainingSeeder::class,
         ]);
     }
 }
