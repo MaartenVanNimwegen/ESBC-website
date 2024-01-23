@@ -19,7 +19,7 @@
 <p>Lid type: {{ $signupModel->RHtype }}</p>
 <p>Foto: de pasfoto is bijgevoegd</p>
 
-
+<h3>Functies:</h3>
 <p>Bestuur: {{ $signupModel->functies[0] }}</p>
 <p>Activiteiten: {{ $signupModel->functies[1] }}</p>
 <p>Trainer: {{ $signupModel->functies[2] }}</p>
