@@ -24,8 +24,7 @@ class SignupMail extends Mailable
 
     public function build()
     {
-        return $this->from('noreply@esbc-menhuir.nl', 'noreply')
-            ->subject('Nieuwe inschrijving')
+        return $this->from('noreply@esbc-menhir.nl', 'noreply')
             ->view('emails.signupMail');
     }
 
@@ -35,7 +34,7 @@ class SignupMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Er is een nieuwe inschrijving!',
+            subject: 'Er is een nieuwe inschrijving! - ESBC Menhir',
         );
     }
 

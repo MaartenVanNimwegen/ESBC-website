@@ -1,6 +1,4 @@
-<h1>Er is een nieuwe inschrijving! - ESBC Menhir</h1>
-
-<h1>Gegevens nieuw lid:</h1>
+<h3>Gegevens nieuw lid:</h3>
 <p>Voornaam: {{ $signupModel->NLvoornaam }}</p>
 <p>Achternaam: {{ $signupModel->NLachternaam }}</p>
 <p>E-mail: {{ $signupModel->NLemail }}</p>
@@ -11,13 +9,13 @@
 <p>Geslacht: {{ $signupModel->NLgeslacht }}</p>
 <p>Telefoonnummer: {{ $signupModel->NLtelefoonnummer }}</p>
 
-<h1>Gegevens rekeninghouder:</h1>
+<h3>Gegevens rekeninghouder:</h3>
 <p>Voorletter en achternaam rekeninghouder: {{ $signupModel->RHvoorletterachternaam }}</p>
 <p>Iban rekeninghouder: {{ $signupModel->RHiban }}</p>
 <p>Telefoonnummer rekeninghouder: {{ $signupModel->RHtelefoon }}</p>
 <p>E-mailadres rekeninghouder: {{ $signupModel->RHemail }}</p>
 
-<h1>Overige gegevens:</h1>
+<h3>Overige gegevens:</h3>
 <p>Type: {{ $signupModel->RHtype }}</p>
 <p>Foto: {{ $signupModel->RHpasfoto }}</p>
 <p>Bestuur: {{ $signupModel->bestuur }}</p>

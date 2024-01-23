@@ -82,7 +82,6 @@ class InschrijfController extends Controller
                 'RHemail.max' => 'Het e-mailadres van de rekeninghouder is te lang! Gebruik maximaal 255 karakters.',
                 'RHemail.email' => 'Het e-mailadres van de rekeninghouder is van een verkeerd type!',
                 'type' => 'Kies een geldig abonnements type!',
-                'pasfoto.required' => 'Een pasfoto is verplicht!',
             ]
         );
 
@@ -108,21 +107,31 @@ class InschrijfController extends Controller
         $signupModel->NLpostcode = $request->input('NLpostcode');
         $signupModel->NLhuisnummer = $request->input('NLhuisnummer');
         $signupModel->NLgeboortedatum = $request->input('NLgeboortedatum');
-        $signupModel->NLgeslacht = $request->input('NLgeslacht');
+        $signupModel->NLgeslacht = $request->input('NLgeslacht') == 0 ? "Man" : "Vrouw";
         $signupModel->NLtelefoonnummer = $request->input('NLtelefoonnummer');
         $signupModel->RHvoorletterachternaam = $request->input('RHvoorletterachternaam');
         $signupModel->RHiban = $request->input('RHiban');
         $signupModel->RHtelefoon = $request->input('RHtelefoon');
         $signupModel->RHemail = $request->input('RHemail');
-        $signupModel->type = $request->input('type');
+        $signupModel->RHtype = $request->input('type');
         $signupModel->pasfoto = $request->input('pasfoto');
-        $signupModel->functies = $request->input('functies');
+        $functies = [
+            $request->input("bestuur") ? "Ja" : "Nee",
+            $request->input("activiteiten") ? "Ja" : "Nee",
+            $request->input("trainer") ? "Ja" : "Nee",
+            $request->input("coach") ? "Ja" : "Nee",
+            $request->input("scheidsrechter") ? "Ja" : "Nee",
+            $request->input("teammanager") ? "Ja" : "Nee",
+            $request->input("jeugdlidonder14") ? "Ja" : "Nee",
+        ];
+        $signupModel->functies = $functies;
 
+        dd($functies);
         $result = $this->sendEmail($signupModel);
         if ($result) {
-            // return redirect()->back()->with('success', 'De grbruiker is succesvol ingeschreven!');
+            return redirect()->back()->with('success', 'De grbruiker is succesvol ingeschreven!');
         }
-        // return redirect()->back()->with('error', 'Er is geen inschrijving gedaan omdat er een fout optrad bij het versturen van de e-mail!');
+        return redirect()->back()->with('error', 'Er is geen inschrijving gedaan omdat er een fout optrad bij het versturen van de e-mail!');
     }
 
     public function sendEmail($signupModel)
