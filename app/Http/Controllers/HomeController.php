@@ -94,19 +94,19 @@ class HomeController extends Controller
                 break;
 
             case (stripos($ploegName, 'assist') !== false):
-                return "storage/images/logos/assist_logo.png";
+                return "storage/images/logos/assist_logo.svg";
                 break;
 
             case (stripos($ploegName, 'leeuwarden') !== false):
-                return "storage/images/logos/leeuwarden_logo.png";
+                return "storage/images/logos/leeuwarden_logo.svg";
                 break;
 
             case (stripos($ploegName, 'H.S.V.') !== false):
-                return "storage/images/logos/hsv_logo.png";
+                return "storage/images/logos/hsv_logo.svg";
                 break;
 
             case (stripos($ploegName, 'moestasj') !== false):
-                return "storage/images/logos/moestasj_logo.png";
+                return "storage/images/logos/moestasj_logo.svg";
                 break;
 
             case (stripos($ploegName, 'celeritas') !== false):
@@ -118,7 +118,7 @@ class HomeController extends Controller
                 break;
 
             case (stripos($ploegName, 'falcons') !== false):
-                return "storage/images/logos/falcons_logo.png";
+                return "storage/images/logos/falcons_logo.svg";
                 break;
 
             case (stripos($ploegName, 'penta') !== false):
@@ -130,7 +130,7 @@ class HomeController extends Controller
                 break;
 
             case (stripos($ploegName, 'mustangs') !== false):
-                return "storage/images/logos/mustangs_logo.png";
+                return "storage/images/logos/mustangs_logo.svg";
                 break;
 
             case (stripos($ploegName, 'trojans') !== false):
@@ -146,7 +146,7 @@ class HomeController extends Controller
                 break;
 
             case (stripos($ploegName, 'dyna') !== false):
-                return "storage/images/logos/dyna_logo.png";
+                return "storage/images/logos/dyna_logo.svg";
                 break;
 
             case (stripos($ploegName, 'scylla') !== false):
@@ -158,7 +158,7 @@ class HomeController extends Controller
                 break;
 
             case (stripos($ploegName, 'M.A.C.') !== false):
-                return "storage/images/logos/mac_logo.png";
+                return "storage/images/logos/mac_logo.svg";
                 break;
 
             case (stripos($ploegName, 'quintas') !== false):
@@ -170,7 +170,7 @@ class HomeController extends Controller
                 break;
 
             default:
-                return 'storage/images/logos/noimg.png';
+                return 'storage/images/logos/noimg.svg';
                 break;
         }
     }
