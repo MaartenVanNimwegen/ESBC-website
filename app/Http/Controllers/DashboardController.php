@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Sponsor;
 use App\Models\Team;
+use App\Models\Training;
 
 class DashboardController extends Controller
 {
@@ -14,6 +15,7 @@ class DashboardController extends Controller
         $news = News::all();
         $sponsors = Sponsor::all();
         $teams = Team::all();
-        return view('dashboard', ['news' => $news, 'sponsors' => $sponsors, 'teams' => $teams]);
+        $trainingen = Training::all();
+        return view('dashboard', ['news' => $news, 'sponsors' => $sponsors, 'teams' => $teams, 'trainingen' => $trainingen]);
     }
 }

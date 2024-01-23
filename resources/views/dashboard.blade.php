@@ -462,6 +462,234 @@
                     </div>
                 </div>
                 {{-- ================================ --}}
+
+                {{-- Trainingen table --}}
+                {{-- ================================ --}}
+                <h1 class="mt-5">Trainingen:</h1>
+                <div class="table-responsive">
+                    <table class="table table-striped table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Team</th>
+                                <th>Dag</th>
+                                <th>Start tijd</th>
+                                <th>Eind tijd</th>
+                                <th>Trainer</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($trainingen as $training)
+                                <tr>
+                                    <td>{{ $training->team->name }}</td>
+                                    <td>
+                                        @php
+                                            switch ($training->day) {
+                                                case '1':
+                                                    $day = 'Maandag';
+                                                    break;
+                                                case '2':
+                                                    $day = 'Dinsdag';
+                                                    break;
+                                                case '3':
+                                                    $day = 'Woensdag';
+                                                    break;
+                                                case '4':
+                                                    $day = 'Donderdag';
+                                                    break;
+                                                case '5':
+                                                    $day = 'Vrijdag';
+                                                    break;
+                                                case '6':
+                                                    $day = 'Zaterdag';
+                                                    break;
+                                                case '7':
+                                                    $day = 'Zondag';
+                                                    break;
+
+                                                default:
+                                                    $day = 'Onbekend';
+                                                    break;
+                                            }
+                                        @endphp
+                                        {{ $day }}
+                                    </td>
+                                    <td>{{ date_format($training->start, 'H:i') }}</td>
+                                    <td>{{ date_format($training->end, 'H:i') }}</td>
+                                    <td>{{ $training->trainer }}</td>
+                                    <td>{{-- Update training --}}
+                                        <button type="button" class="btn btn-red" data-bs-toggle="modal"
+                                            data-bs-target="#updateTrainingModal{{ $training->id }}">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                        <div class="modal fade" id="updateTrainingModal{{ $training->id }}"
+                                            tabindex="-1" aria-labelledby="updateTrainingModal{{ $training->id }}Label"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5"
+                                                            id="updateTrainingModal{{ $training->id }}Label">Wijzig
+                                                            training gegevens
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form
+                                                            action="{{ route('update-training', ['id' => $training->id]) }}"
+                                                            method="post" enctype="multipart/form-data">
+                                                            @csrf
+
+                                                            <label for="team">Team:</label>
+                                                            <select name="team" id="team" class="form-select">
+                                                                @foreach ($teams as $team)
+                                                                    @if ($team->id == $training->team->id)
+                                                                        <option value="{{ $team->id }}" selected>
+                                                                            {{ $team->name }}
+                                                                        </option>
+                                                                    @else
+                                                                        <option value="{{ $team->id }}">
+                                                                            {{ $team->name }}
+                                                                        </option>
+                                                                    @endif
+                                                                @endforeach
+                                                            </select>
+
+                                                            <label for="day">Dag:</label>
+                                                            <select name="day" id="day" class="form-select">
+                                                                @foreach (['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag'] as $index => $day)
+                                                                    <option value="{{ $index + 1 }}"
+                                                                        {{ $index + 1 == $training->day ? 'selected' : '' }}>
+                                                                        {{ $day }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+
+                                                            <label for="start">Start:</label>
+                                                            <input class="form-control" type="time" name="start"
+                                                                id="start"
+                                                                value="{{ date_format($training->start, 'H:i') }}">
+
+                                                            <label for="end">End:</label>
+                                                            <input class="form-control" type="time" name="end"
+                                                                id="end"
+                                                                value="{{ date_format($training->end, 'H:i') }}">
+
+                                                            <label for="trainer">Trainer:</label>
+                                                            <input class="form-control" type="text" name="trainer"
+                                                                id="trainer" value="{{ $training->trainer }}">
+
+                                                            <div class="mt-2">
+                                                                <button value="{{ $training->id }}"
+                                                                    name="update-training" class="btn btn-red"
+                                                                    type="submit">Pas aan</button>
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Annuleer</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {{-- Delete training --}}
+                                        <button type="button" class="btn btn-red" data-bs-toggle="modal"
+                                            data-bs-target="#deleteTeamModal{{ $training->id }}">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                        <div class="modal fade" id="deleteTeamModal{{ $training->id }}" tabindex="-1"
+                                            aria-labelledby="deleteTeamModal{{ $training->id }}Label" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5"
+                                                            id="deleteTeamModal{{ $training->id }}Label">Weet je
+                                                            zeker dat
+                                                            je deze training wilt verwijderen?
+                                                        </h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form
+                                                            action="{{ route('delete-training', ['id' => $training->id]) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            <button value="{{ $training->id }}" name="delete-training"
+                                                                class="btn btn-red" type="submit">Ja!</button>
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Annuleer</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+
+                    <!-- Add training modal -->
+                    <button type="button" class="btn btn-red" data-bs-toggle="modal"
+                        data-bs-target="#addTrainingModal">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                    <div class="modal fade" id="addTrainingModal" tabindex="-1" aria-labelledby="addTrainingModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="addTrainingModalLabel">Training toevoegen</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{ route('add-training') }}" method="post"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        <label for="team">Training:</label>
+                                        <select name="team" id="team" class="form-select">
+                                            @foreach ($teams as $team)
+                                                <option value="{{ $team->id }}">
+                                                    {{ $team->name }}</option>
+                                            @endforeach
+                                        </select>
+
+                                        <label for="day">Dag:</label>
+                                        <select name="day" id="day" class="form-select">
+                                            <option value="1">Maandag</option>
+                                            <option value="2">Dinsdag</option>
+                                            <option value="3">Woensdag</option>
+                                            <option value="4">Donderdag</option>
+                                            <option value="5">Vrijdag</option>
+                                            <option value="6">Zaterdag</option>
+                                            <option value="7">Zondag</option>
+                                        </select>
+
+                                        <label for="start">Start:</label>
+                                        <input class="form-control" type="time" name="start" id="start">
+
+                                        <label for="end">End:</label>
+                                        <input class="form-control" type="time" name="end" id="end">
+
+                                        <label for="trainer">Trainer:</label>
+                                        <input class="form-control" type="text" name="trainer" id="trainer">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-red">Training toevoegen</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- ================================ --}}
             </div>
         </div>
         </div>
