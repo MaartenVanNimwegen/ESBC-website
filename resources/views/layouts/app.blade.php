@@ -61,6 +61,11 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a href="/trainingen" class="text-uppercase fw-bold fs-5">
+                                    TRAININGEN
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="/nieuws" class="text-uppercase fw-bold fs-5">
                                     NIEUWS
                                 </a>
