@@ -45,12 +45,29 @@ class TrainingenController extends Controller
             [
                 'team' => 'required|integer|min:1|max:11',
                 'day' => 'required|integer|min:1|max:11',
-                'start' => 'required|string|max:12',
-                'end' => 'required|string|max:12',
+                'start' => 'required|string|max:5',
+                'end' => 'required|string|max:5',
                 'trainer' => 'required|string|min:5|max:255'
             ],
             [
-
+                'team.required' => 'Een team is verplicht!',
+                'team.integer' => 'Je moet een team ID invullen!',
+                'team.min' => 'Team ID moet worden gegeven!',
+                'team.max' => 'Het team ID kan niet langer dan 11 karakters zijn!',
+                'day.required' => 'Een dag is verplicht!',
+                'day.integer' => 'Je moet een dag nummer ingeven!',
+                'day.min' => 'Het dag nummer moet worden ingeven!',
+                'day.max' => 'Het dag nummer kan max 11 karakters zijn!',
+                'start.required' => 'Een start tijd is verplicht!',
+                'start.string' => 'De start tijd is onjuist!',
+                'start.max' => 'De start tijd is te lang!',
+                'end.required' => 'Een eind tijd is verplicht!',
+                'end.string' => 'De eind tijd is onjuist!',
+                'end.max' => 'De eind tijd is te lang!',
+                'trainer.required' => 'De trainer is verplicht!',
+                'trainer.string' => 'De trainer is onjuist!',
+                'trainer.min' => 'De naam van de trainer is te kort!',
+                'trainer.max' => 'De naam van de trainer is te lang!',
             ]
         );
 
@@ -71,21 +88,31 @@ class TrainingenController extends Controller
     {
         $validated = request()->validate(
             [
-                'name' => 'required|string|min:3|max:255',
-                'picture' => 'image|required',
-                'url' => 'required|url|min:8|max:255'
+                'team' => 'required|integer|min:1|max:11',
+                'day' => 'required|integer|min:1|max:11',
+                'start' => 'required|string|max:5',
+                'end' => 'required|string|max:5',
+                'trainer' => 'required|string|min:5|max:255'
             ],
             [
-                'name.required' => 'De naam van de sponsor is verplicht!',
-                'name.string' => 'De naam van de sponsor is van een verkeerd type!',
-                'name.min' => 'De naam van de sponsor is te kort!',
-                'name.max' => 'De naam van de sponsor is te lang!',
-                'picture.image' => 'Het logo van de sponsor moet van het type: jpeg, jpg, png of gif zijn!',
-                'picture.required' => 'Het logo van de sponsor is verplicht!',
-                'url.required' => 'De url van de sponsor is verplicht!',
-                'url.url' => 'De url van de sponsor is onjuist!',
-                'url.min' => 'De url van de sponsor is te kort!',
-                'url.max' => 'De url van de sponsor is te lang!',
+                'team.required' => 'Een team is verplicht!',
+                'team.integer' => 'Je moet een team ID invullen!',
+                'team.min' => 'Team ID moet worden gegeven!',
+                'team.max' => 'Het team ID kan niet langer dan 11 karakters zijn!',
+                'day.required' => 'Een dag is verplicht!',
+                'day.integer' => 'Je moet een dag nummer ingeven!',
+                'day.min' => 'Het dag nummer moet worden ingeven!',
+                'day.max' => 'Het dag nummer kan max 11 karakters zijn!',
+                'start.required' => 'Een start tijd is verplicht!',
+                'start.string' => 'De start tijd is onjuist!',
+                'start.max' => 'De start tijd is te lang!',
+                'end.required' => 'Een eind tijd is verplicht!',
+                'end.string' => 'De eind tijd is onjuist!',
+                'end.max' => 'De eind tijd is te lang!',
+                'trainer.required' => 'De trainer is verplicht!',
+                'trainer.string' => 'De trainer is onjuist!',
+                'trainer.min' => 'De naam van de trainer is te kort!',
+                'trainer.max' => 'De naam van de trainer is te lang!',
             ]
         );
 
@@ -95,12 +122,14 @@ class TrainingenController extends Controller
             $validated['picture'] = $picturePath;
         }
 
-        $sponsor = new Sponsor();
-        $sponsor->title = $validated['name'];
-        $sponsor->picture_location = $validated['picture'];
-        $sponsor->url = $validated['url'];
-        $sponsor->save();
+        $training = new Training();
+        $training->team_id = $validated['team'];
+        $training->day = $validated['day'];
+        $training->start = $validated['start'];
+        $training->end = $validated['end'];
+        $training->trainer = $validated['trainer'];
+        $training->save();
 
-        return redirect()->back()->with('success', 'De sponsor is succesvol toegevoegd!');
+        return redirect()->back()->with('success', 'De training is succesvol toegevoegd!');
     }
 }
