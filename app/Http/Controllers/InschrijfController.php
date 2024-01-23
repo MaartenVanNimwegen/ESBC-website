@@ -124,12 +124,23 @@ class InschrijfController extends Controller
             $request->input("teammanager") ? "Ja" : "Nee",
             $request->input("jeugdlidonder14") ? "Ja" : "Nee",
         ];
-        $signupModel->functies = $functies;
-        $result = $this->sendEmail($signupModel);
-        if ($result) {
-            return redirect()->back()->with('success', 'De grbruiker is succesvol ingeschreven!');
+        $oneIsTrue = false;
+        foreach ($functies as $function) {
+            if ($function == 'Ja') {
+                $oneIsTrue = true;
+            }
         }
-        return redirect()->back()->with('error', 'Er is geen inschrijving gedaan omdat er een fout optrad bij het versturen van de e-mail!');
+        if ($oneIsTrue) {
+
+            $signupModel->functies = $functies;
+            $result = $this->sendEmail($signupModel);
+            if ($result) {
+                return redirect()->back()->with('success', 'Uw inschrijving is verzonden!');
+            }
+            return redirect()->back()->with('error', 'Er is geen inschrijving gedaan omdat er een fout optrad bij het versturen van de e-mail!');
+        } else {
+            return redirect()->back()->with('error', 'U moet minimaal een functie kiezen!');
+        }
     }
 
     public function sendEmail($signupModel)

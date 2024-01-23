@@ -14,6 +14,16 @@
                                 </ul>
                             </div>
                         @endif
+                        @if (Session::has('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ Session::get('success') }}
+                            </div>
+                        @endif
+                        @if (Session::has('error'))
+                            <div class="alert alert-danger" role="alert">
+                                {{ Session::get('error') }}
+                            </div>
+                        @endif
                         <h1 class="text-uppercase fw-bold">Inschrijfformulier</h1>
                         <form action="{{ route('signup') }}" method="post" enctype="multipart/form-data">
                             @csrf
