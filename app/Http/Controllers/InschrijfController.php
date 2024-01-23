@@ -113,8 +113,8 @@ class InschrijfController extends Controller
         $signupModel->RHiban = $request->input('RHiban');
         $signupModel->RHtelefoon = $request->input('RHtelefoon');
         $signupModel->RHemail = $request->input('RHemail');
-        $signupModel->RHtype = $request->input('type');
-        $signupModel->pasfoto = $request->input('pasfoto');
+        $signupModel->RHtype = $request->input('type') == 0 ? 'Competitie' : 'Recreant';
+        $signupModel->pasfoto = $request->file('pasfoto')->store('images/sponsors', 'public');
         $functies = [
             $request->input("bestuur") ? "Ja" : "Nee",
             $request->input("activiteiten") ? "Ja" : "Nee",
@@ -125,8 +125,6 @@ class InschrijfController extends Controller
             $request->input("jeugdlidonder14") ? "Ja" : "Nee",
         ];
         $signupModel->functies = $functies;
-
-        dd($functies);
         $result = $this->sendEmail($signupModel);
         if ($result) {
             return redirect()->back()->with('success', 'De grbruiker is succesvol ingeschreven!');

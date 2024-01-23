@@ -25,7 +25,11 @@ class SignupMail extends Mailable
     public function build()
     {
         return $this->from('noreply@esbc-menhir.nl', 'noreply')
-            ->view('emails.signupMail');
+            ->view('emails.signupMail')
+            ->attach(storage_path('app/public/' . $this->signupModel->pasfoto), [
+                'as' => 'pasfoto.jpg',
+            ]);
+        ;
     }
 
     /**

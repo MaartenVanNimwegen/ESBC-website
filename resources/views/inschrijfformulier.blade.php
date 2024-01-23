@@ -78,7 +78,7 @@
                             <input type="file" id="pasfoto" name="pasfoto" class="form-control" accept="image/*">
 
                             <br>
-                            <p class="fw-bold">Persoonsgegevens rekeninghouder:</p>
+                            <p class="fw-bold">Functies binnen ESBC Menhir</p>
                             <p>Binnen de vereniging ESBC Menhir ben je vanaf de U14 als wedstrijd spelend lid automatisch
                                 timer/scorer. Daarnaast is ieder lid verplicht een functie te bekleden en/of deel te nemen
                                 aan activiteiten. Vink minimaal één van onderstaande functies aan.</p>
@@ -113,8 +113,7 @@
                                 <input name="jeugdlidonder14" class="form-check-input" type="checkbox" id="functie">
                             </div>
 
-                            <br>
-                            <p class="fw-bold">Algemeen</p>
+                            <p class="mt-4 fw-bold">Algemeen</p>
                             <p>Ik ben op de hoogte van de voorwaarden die aan mijn lidmaatschap gesteld worden zoals
                                 omschreven in het Huishoudelijk Reglement, zie hiervoor het Huishoudelijk Reglement.</p>
                             <p>Door het versturen van dit formulier machtig je/machtigt u basketbal vereniging ESBC Menhir

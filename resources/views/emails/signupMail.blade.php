@@ -16,12 +16,14 @@
 <p>E-mailadres rekeninghouder: {{ $signupModel->RHemail }}</p>
 
 <h3>Overige gegevens:</h3>
-<p>Type: {{ $signupModel->RHtype }}</p>
-<p>Foto: {{ $signupModel->RHpasfoto }}</p>
-<p>Bestuur: {{ $signupModel->bestuur }}</p>
-<p>Activiteiten: {{ $signupModel->activiteiten }}</p>
-<p>Trainer: {{ $signupModel->trainer }}</p>
-<p>Coach: {{ $signupModel->coach }}</p>
-<p>Scheidsrechter: {{ $signupModel->scheidsrechter }}</p>
-<p>Teammanager: {{ $signupModel->teammanager }}</p>
-<p>Jeugdlid onder 14: {{ $signupModel->jeugdlidonder14 }}</p>
+<p>Lid type: {{ $signupModel->RHtype }}</p>
+<p>Foto: de pasfoto is bijgevoegd</p>
+
+
+<p>Bestuur: {{ $signupModel->functies[0] }}</p>
+<p>Activiteiten: {{ $signupModel->functies[1] }}</p>
+<p>Trainer: {{ $signupModel->functies[2] }}</p>
+<p>Coach: {{ $signupModel->functies[3] }}</p>
+<p>Scheidsrechter: {{ $signupModel->functies[4] }}</p>
+<p>Teammanager: {{ $signupModel->functies[5] }}</p>
+<p>Jeugdlid onder 14: {{ $signupModel->functies[6] }}</p>
