@@ -158,7 +158,7 @@
         </div>
         <div class="text-center p-4">
             <p>
-                Copyright © 2023 ESBC Menhir - Made by <a href="https://www.linkedin.com/in/maartenvannimwegen/"
+                Copyright © 2024 ESBC Menhir - Made by <a href="https://www.linkedin.com/in/maartenvannimwegen/"
                     target="_blank">Maarten van Nimwegen</a>
             </p>
         </div>
