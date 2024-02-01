@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Trainingen</h1>
+                <h1 class="text-uppercase fw-bold">Trainingen</h1>
                 <p>Lijkt basketbal je leuk? Kom dan eens langs op een van onze trainingen. Je mag 3 keer gratis meedoen om
                     te kijken of je basketbal een leuke sport vindt.</p>
                 <p>Hieronder treft u de trainingstijden van dit seizoen aan.</p>
@@ -14,7 +14,7 @@
                     Duinterpenhal = Keizersmantel<br>
                     Bogerman = Hemdijk 47</p>
                 @if ($maandag->isNotEmpty())
-                    <h3>Maandag: (RSG)</h3>
+                    <h3 class="text-uppercase fw-bold">Maandag: (RSG)</h3>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead class="bg-head">
@@ -39,7 +39,7 @@
                     </div>
                 @endif
                 @if ($dinsdag->isNotEmpty())
-                    <h3>Dinsdag: (Bogerman)</h3>
+                    <h3 class="text-uppercase fw-bold">Dinsdag: (Bogerman)</h3>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead class="bg-head">
@@ -64,7 +64,7 @@
                     </div>
                 @endif
                 @if ($woensdag->isNotEmpty())
-                    <h3>Woensdag: (Duinterpenhal)</h3>
+                    <h3 class="text-uppercase fw-bold">Woensdag: (Duinterpenhal)</h3>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead class="bg-head">
@@ -89,7 +89,7 @@
                     </div>
                 @endif
                 @if ($donderdag->isNotEmpty())
-                    <h3>Donderdag: (Bogerman)</h3>
+                    <h3 class="text-uppercase fw-bold">Donderdag: (Bogerman)</h3>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead class="bg-head">
@@ -114,7 +114,7 @@
                     </div>
                 @endif
                 @if ($vrijdag->isNotEmpty())
-                    <h3>Vrijdag: (Locatie)</h3>
+                    <h3 class="text-uppercase fw-bold">Vrijdag: (Locatie)</h3>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead class="bg-head">
@@ -139,7 +139,7 @@
                     </div>
                 @endif
                 @if ($zaterdag->isNotEmpty())
-                    <h3>Zaterdag: (Locatie)</h3>
+                    <h3 class="text-uppercase fw-bold">Zaterdag: (Locatie)</h3>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead class="bg-head">
@@ -164,7 +164,7 @@
                     </div>
                 @endif
                 @if ($zondag->isNotEmpty())
-                    <h3>Zondag: (Locatie)</h3>
+                    <h3 class="text-uppercase fw-bold">Zondag: (Locatie)</h3>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead class="bg-head">
@@ -247,7 +247,8 @@
                     informatie over de trainingen neem dan contact op met de wedstrijdsecretaris.
                 </p>
                 <p>
-                    <b>Dit kan door een mail te sturen naar wedstrijdsecretaris@esbcmenhir.nl of te bellen met 06-15879896.</b>
+                    <b>Dit kan door een mail te sturen naar wedstrijdsecretaris@esbcmenhir.nl of te bellen met
+                        06-15879896.</b>
                 </p>
             </div>
         </div>
