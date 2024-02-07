@@ -472,8 +472,8 @@
                             <tr>
                                 <th>Team</th>
                                 <th>Dag</th>
-                                <th>Start tijd</th>
-                                <th>Eind tijd</th>
+                                <th>Starttijd</th>
+                                <th>Eindtijd</th>
                                 <th>Trainer</th>
                                 <th></th>
                                 <th></th>
