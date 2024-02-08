@@ -146,7 +146,7 @@ class InschrijfController extends Controller
     public function sendEmail($signupModel)
     {
         try {
-            Mail::to(env('MAIL_TO', 'redactie@esbcmenhir.nl'))
+            Mail::to(env('MAIL_TO', 'wedstrijdsecretaris@esbcmenhir.nl'))
                 ->send(new SignupMail($signupModel));
             return true;
         } catch (\Exception $e) {
