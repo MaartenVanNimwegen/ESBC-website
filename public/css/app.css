@@ -1,0 +1,401 @@
+/* Header */
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+header li {
+    margin: 20px;
+}
+header li a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+@media (min-width: 1400px) {
+    header {
+        position: absolute;
+        background: linear-gradient(
+            180deg,
+            rgba(36, 30, 32, 0.5) 0%,
+            rgba(36, 30, 32, 0.5) 24.48%,
+            rgba(36, 30, 32, 0.331034) 53.12%,
+            rgba(36, 30, 32, 0) 100%
+        );
+    }
+}
+@media (max-width: 1400px) {
+    header {
+        background-color: #24201f;
+    }
+    header .background-black {
+        background-color: #24201f;
+    }
+}
+
+.bg-red {
+    background-color: #e41b28;
+    padding: 0 5px 0 5px;
+    max-width: 190px;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    background-color: #24201f;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #fff;
+}
+footer p {
+    color: #fff;
+}
+
+/* Home */
+.sponsor-slider .img-parent {
+    height: 250px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.sponsor-slider img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.sponsor-slider .slick-slider {
+    background-color: transparent;
+}
+
+.news-item-home {
+    height: 200px;
+    background-repeat: no-repeat;
+    background-color: #24201f;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-item-home h2 {
+    position: relative;
+    z-index: 10;
+}
+
+.news-item-home img {
+    position: absolute;
+    bottom: -50px;
+    left: 40px;
+}
+
+.news-item-home-date {
+    background-color: #e41b28;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.news-item-home-date p {
+    margin: 0;
+}
+
+.video-text {
+    font-size: 100px;
+    color: #fff;
+    margin: -500px 0px 300px 100px;
+}
+
+@media (max-width: 1500px) {
+    .video-text {
+        font-size: 90px;
+        color: #fff;
+        margin: -300px 0px 120px 100px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .video-text {
+        font-size: 70px;
+        color: #fff;
+        margin: -230px 0px 100px 100px;
+    }
+}
+
+@media (max-width: 800px) {
+    .video-text {
+        font-size: 50px;
+        color: #fff;
+        margin: -150px 0px 50px 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    .video-text {
+        font-size: 40px;
+        color: #fff;
+        margin: -120px 0px 40px 50px;
+    }
+}
+
+@media (max-width: 450px) {
+    .video-text {
+        font-size: 25px;
+        color: #fff;
+        margin: -80px 0px 40px 50px;
+    }
+}
+
+/* Games */
+.game-top-bar {
+    background-color: #24201f;
+    color: #fff;
+    text-align: center;
+}
+
+.game-picture-container {
+    position: relative;
+}
+
+.game-picture-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+.game-picture-bg .dark-overlay {
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    position: absolute;
+}
+
+.game-picture-bg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.game-overlay {
+    padding: 20px 80px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.game-overlay .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.game-overlay .team h3 {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.game-overlay img {
+    height: 150px;
+}
+
+.game-overlay h2 {
+    text-align: center;
+}
+
+.game {
+    margin: 0 1.5rem 3rem 1.5rem;
+}
+
+.logo {
+    width: 80%;
+    height: auto;
+}
+
+@media (max-width: 1400px) {
+    .game-overlay {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .game-overlay {
+        padding: 20px 40px;
+    }
+    .game-overlay img {
+        height: 120px;
+    }
+}
+
+@media (max-width: 992px) {
+    .game-overlay {
+        padding: 20px 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-overlay {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .game-overlay img {
+        height: 100px;
+    }
+}
+
+/* Dashboard */
+.sponsor-image {
+    height: 150px;
+    width: auto;
+}
+
+.logo-preview {
+    width: 100%;
+    border: 1px solid #24201f;
+    padding: 10px;
+}
+.logo-preview img {
+    height: auto;
+    width: 100%;
+}
+
+/* Inschrijfformulier */
+
+/* Lid worden */
+a {
+    color: #24201f;
+}
+
+/* Login */
+.login-box {
+    color: #fff;
+}
+
+/* News */
+.news {
+    background-color: #24201f;
+    color: #fff;
+}
+
+.date-block {
+    background-color: #e41b28;
+    color: #fff;
+    text-align: end;
+    padding: 0px 10px;
+}
+
+/* Privacy */
+.table-black {
+    background-color: #24201f;
+    color: #fff;
+}
+
+.table-gray {
+    background-color: #d9d9d9;
+    color: #24201f;
+}
+
+.table-head {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Teams */
+.team-link {
+    display: block;
+    height: 200px;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+.team button {
+    border: none;
+}
+
+.team-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.team:hover .team-link::before {
+    opacity: 1;
+}
+
+.team-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.5s ease;
+}
+
+/* Wedstrijden */
+.bg-head {
+    background-color: #24201f;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.table-text {
+    text-transform: uppercase;
+}
+
+/* Customs */
+/* @mixin Button() {
+    padding: 20px;
+  } */
+
+@media (min-width: 1400px) {
+    .nav-background {
+        height: 110px;
+        background-color: #24201f;
+        margin-bottom: 40px;
+    }
+}
+
+.btn-red {
+    background-color: #e41b28;
+    border-color: #e41b28;
+    color: #fff;
+}
+
+.btn-red:hover {
+    background-color: #fff;
+    border-color: #e41b28;
+    color: #e41b28;
+}
+
+.white-text {
+    color: #fff;
+    font-size: 30px;
+}
