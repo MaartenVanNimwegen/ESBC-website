@@ -151,7 +151,7 @@ class TeamController extends Controller
         $team = Team::find($id);
         if ($team) {
             if (request()->has('picture')) {
-                $picturePath = request()->file('picture')->store('images/sponsors', 'public');
+                $picturePath = request()->file('picture')->store('images/teams', 'public');
                 $validated['picture'] = $picturePath;
                 $team->name = $validated['name'];
                 $team->plg_ID = $validated['plg_ID'];
@@ -191,7 +191,7 @@ class TeamController extends Controller
 
 
         if (request()->has('picture')) {
-            $picturePath = request()->file('picture')->store('images/sponsors', 'public');
+            $picturePath = request()->file('picture')->store('images/teams', 'public');
             $validated['picture'] = $picturePath;
         }
 
