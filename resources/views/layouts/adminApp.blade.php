@@ -18,8 +18,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    @vite(['resources/scss/app.scss', 'resources/css/app.css', 'resources/js/app.js'])
     <link rel="shortcut icon" href="{{ asset('storage/images/logos/menhir_logo.svg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="css/app.css">
     <title>ESBC Menhir</title>
 </head>
 
