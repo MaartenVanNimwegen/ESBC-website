@@ -130,7 +130,7 @@ class TeamController extends Controller
                 'name' => 'required|string|min:3|max:255',
                 'plg_ID' => 'required|regex:^\s*-*[0-9]{1,10}\s*$^|max:100',
                 'cmp_ID' => 'required|regex:^\s*-*[0-9]{1,10}\s*$^|max:100',
-                'picture' => 'image|required',
+                'picture' => 'image|required|max:200',
             ],
             [
                 'name.required' => 'De naam van het team is verplicht!',
@@ -145,6 +145,7 @@ class TeamController extends Controller
                 'cmp_ID.max' => 'Het competitie ID mag maximaal 10 cijfers zijn!',
                 'picture.image' => 'Het logo van het team moet van het type: jpeg, jpg, png of gif zijn!',
                 'picture.required' => 'Het logo van het team is verplicht!',
+                'picture.max' => 'De gekozen foto is te groot!',
             ]
         );
 
@@ -171,7 +172,7 @@ class TeamController extends Controller
                 'name' => 'required|string|min:3|max:255',
                 'plg_ID' => 'required|regex:^\s*-*[0-9]{1,10}\s*$^|max:100',
                 'cmp_ID' => 'required|regex:^\s*-*[0-9]{1,10}\s*$^|max:100',
-                'picture' => 'image|required',
+                'picture' => 'image|required|max:200',
             ],
             [
                 'name.required' => 'De naam van het team is verplicht!',
@@ -186,6 +187,7 @@ class TeamController extends Controller
                 'cmp_ID.max' => 'Het competitie ID mag maximaal 10 cijfers zijn!',
                 'picture.image' => 'Het logo van het team moet van het type: jpeg, jpg, png of gif zijn!',
                 'picture.required' => 'Het logo van het team is verplicht!',
+                'picture.max' => 'De gekozen foto is te groot!',
             ]
         );
 

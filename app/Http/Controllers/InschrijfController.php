@@ -91,7 +91,7 @@ class InschrijfController extends Controller
 
         $validated = request()->validate(
             [
-                'pasfoto' => 'image|required',
+                'pasfoto' => 'image|required|max:20480',
             ],
             [
                 'pasfoto.required' => 'Een pasfoto is verplicht!',

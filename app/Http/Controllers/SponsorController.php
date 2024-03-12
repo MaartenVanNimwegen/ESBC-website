@@ -26,7 +26,7 @@ class SponsorController extends Controller
         $validated = request()->validate(
             [
                 'name' => 'required|string|min:3|max:255',
-                'picture' => 'image|required',
+                'picture' => 'image|required|max:200',
                 'url' => 'required|url|min:8|max:255'
             ],
             [
@@ -36,6 +36,7 @@ class SponsorController extends Controller
                 'name.max' => 'De naam van de sponsor is te lang!',
                 'picture.image' => 'Het logo van de sponsor moet van het type: jpeg, jpg, png of gif zijn!',
                 'picture.required' => 'Het logo van de sponsor is verplicht!',
+                'picture.max' => 'De gekozen foto is te groot!',
                 'url.required' => 'De url van de sponsor is verplicht!',
                 'url.url' => 'De url van de sponsor is onjuist!',
                 'url.min' => 'De url van de sponsor is te kort!',
@@ -63,7 +64,7 @@ class SponsorController extends Controller
         $validated = request()->validate(
             [
                 'name' => 'required|string|min:3|max:255',
-                'picture' => 'image|required',
+                'picture' => 'image|required|max:200',
                 'url' => 'required|url|min:8|max:255'
             ],
             [
@@ -73,6 +74,7 @@ class SponsorController extends Controller
                 'name.max' => 'De naam van de sponsor is te lang!',
                 'picture.image' => 'Het logo van de sponsor moet van het type: jpeg, jpg, png of gif zijn!',
                 'picture.required' => 'Het logo van de sponsor is verplicht!',
+                'picture.max' => 'De gekozen foto is te groot!',
                 'url.required' => 'De url van de sponsor is verplicht!',
                 'url.url' => 'De url van de sponsor is onjuist!',
                 'url.min' => 'De url van de sponsor is te kort!',
