@@ -7,7 +7,7 @@
         <div class="game-picture-container">
             <div class="game-picture-bg">
                 <div class="dark-overlay"></div>
-                <img src="{{ asset('storage/images/games/game-bg-1.png') }}">
+                <img src="{{ asset('storage/images/games/game-bg-1.webp') }}" alt="game-background">
             </div>
             <div class="game-overlay">
                 @if ($lastGame !== 'error')
@@ -17,7 +17,7 @@
                             @php
                                 $loc = App\Http\Controllers\HomeController::GetClubLogo($lastGame->Thuisteam);
                             @endphp
-                            <img src='{{ asset("$loc") }}'>
+                            <img src='{{ asset("$loc") }}' alt="team-logo">
                         </div>
                         <p class="text-uppercase fw-bold">vs</p>
                         <div class="team">
@@ -25,7 +25,7 @@
                             @php
                                 $loc = App\Http\Controllers\HomeController::GetClubLogo($lastGame->Uitteam);
                             @endphp
-                            <img src='{{ asset("$loc") }}'>
+                            <img src='{{ asset("$loc") }}' alt="team-logo">
                         </div>
                     </div>
                     <h2 class="text-uppercase fw-bold">{{ $lastGame->ScoreThuis }} - {{ $lastGame->ScoreUit }}</h2>
@@ -48,7 +48,7 @@
         <div class="game-picture-container">
             <div class="game-picture-bg">
                 <div class="dark-overlay"></div>
-                <img src="{{ asset('storage/images/games/game-bg-2.png') }}">
+                <img src="{{ asset('storage/images/games/game-bg-2.webp') }}" alt="game-background">
             </div>
             <div class="game-overlay">
                 @if ($firstGame !== 'error')
@@ -58,7 +58,7 @@
                             @php
                                 $loc = App\Http\Controllers\HomeController::GetClubLogo($firstGame->thuisPloeg);
                             @endphp
-                            <img src='{{ asset("$loc") }}'>
+                            <img src='{{ asset("$loc") }}' alt="team-logo">
                         </div>
                         <p class="text-uppercase fw-bold">vs</p>
                         <div class="team">
@@ -66,7 +66,7 @@
                             @php
                                 $loc = App\Http\Controllers\HomeController::GetClubLogo($firstGame->uitPloeg);
                             @endphp
-                            <img src='{{ asset("$loc") }}'>
+                            <img src='{{ asset("$loc") }}' alt="team-logo">
                         </div>
                     </div>
                     <h2 class="text-uppercase fw-bold">{{ date_format($firstGame->datum, 'd M') }}</h2>
