@@ -32,7 +32,7 @@ class TrainingSeeder extends Seeder
             'day' => 1,
             'start' => '19:30',
             'end' => '20:30',
-            'trainer' => 'Jan Weerst',
+            'trainer' => 'Jan Weerts',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

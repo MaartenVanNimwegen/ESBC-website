@@ -11,35 +11,35 @@ class SponsorSeeder extends Seeder
     {
         DB::table('sponsor')->insert([
             'title' => 'de Stolp',
-            'picture_location' => 'images/sponsors/de-stolp.png',
+            'picture_location' => 'images/sponsors/de-stolp.webp',
             'created_at' => now(),
             'updated_at' => now(),
             'url' => 'https://www.destolpsneek.nl/',
         ]);
         DB::table('sponsor')->insert([
             'title' => 'Garage Betten',
-            'picture_location' => 'images/sponsors/Garage-Betten_JPG-test.png',
+            'picture_location' => 'images/sponsors/garage-betten.webp',
             'created_at' => now(),
             'updated_at' => now(),
             'url' => 'https://betten-sneek.nl/',
         ]);
         DB::table('sponsor')->insert([
             'title' => 'Schadecentrul Sluyter',
-            'picture_location' => 'images/sponsors/schadecentrum-sluyter-1.png',
+            'picture_location' => 'images/sponsors/schade-centrum.webp',
             'created_at' => now(),
             'updated_at' => now(),
             'url' => 'https://sluyterautoschade.nl/',
         ]);
         DB::table('sponsor')->insert([
             'title' => 'Sluyter Schilderwerk',
-            'picture_location' => 'images/sponsors/sluyter-schilderwerk.png',
+            'picture_location' => 'images/sponsors/schilder-sluyter.webp',
             'created_at' => now(),
             'updated_at' => now(),
             'url' => 'https://sluytersneek.nl/',
         ]);
         DB::table('sponsor')->insert([
             'title' => 'Sponsorkliks',
-            'picture_location' => 'images/sponsors/sponsor-sponsorkliks.png',
+            'picture_location' => 'images/sponsors/sponsor-kliks.webp',
             'created_at' => now(),
             'updated_at' => now(),
             'url' => 'https://www.sponsorkliks.com/products/shops.php?club=3968&cn=nl&ln=nl',
