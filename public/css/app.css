@@ -126,6 +126,14 @@ footer p {
     }
 }
 
+@media (max-width: 1300px) {
+    .video-text {
+        font-size: 70px;
+        color: #fff;
+        margin: -450px 0px 300px 100px;
+    }
+}
+
 @media (max-width: 1200px) {
     .video-text {
         font-size: 70px;
@@ -152,9 +160,9 @@ footer p {
 
 @media (max-width: 450px) {
     .video-text {
-        font-size: 25px;
+        font-size: 35px;
         color: #fff;
-        margin: -80px 0px 40px 50px;
+        margin: -100px 0px 30px 50px;
     }
 }
 
