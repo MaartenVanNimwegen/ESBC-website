@@ -247,8 +247,8 @@
                     informatie over de trainingen neem dan contact op met de wedstrijdsecretaris.
                 </p>
                 <p>
-                    <b>Dit kan door een mail te sturen naar wedstrijdsecretaris@esbcmenhir.nl of te bellen met
-                        06-15879896.</b>
+					<b>Dit kan door een mail te sturen naar <a href="mailto:wedstrijdsecretaris@esbcmenhir.nl">wedstrijdsecretaris@esbcmenhir.nl</a> of te bellen met
+						<a href="tel:0615879896">06-15879896</a>.</b>
                 </p>
             </div>
         </div>
