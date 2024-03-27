@@ -3,9 +3,7 @@
     <div id="home">
         <div class="row g-0">
             <div class="col-12">
-                <video style="width:100%;" muted autoplay loop>
-                    <source src="{{ asset('storage/videos/home.mp4') }}" type="video/mp4" />
-                </video>
+				<img style="width:100%" src="{{ asset('storage/videos/home-middel.gif')}}" alt="Basketbal gif"/>
                 <h1 class="video-text text-uppercase fw-bold"><b>ESBC MENHIR <br>SNEEK</b></h1>
                 <div class="container">
                     <div class="row mb-5">
